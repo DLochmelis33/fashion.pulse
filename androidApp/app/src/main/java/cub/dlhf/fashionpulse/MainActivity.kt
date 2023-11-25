@@ -2,6 +2,7 @@ package cub.dlhf.fashionpulse
 
 import android.net.Uri
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
@@ -9,9 +10,7 @@ import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
@@ -46,7 +45,7 @@ class MainActivity : ComponentActivity() {
     }
 
     @Composable
-    fun MainScreen() {
+    private fun MainScreen() {
         var takenPhotoUri: Uri? = null
         var userImageUri by remember { mutableStateOf<Uri?>(null) }
 
@@ -66,14 +65,18 @@ class MainActivity : ComponentActivity() {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(50.dp),
+                .padding(20.dp),
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            ImagePlaceholder(imageUri = userImageUri, modifier = Modifier.heightIn(max = 400.dp))
-            Spacer(modifier = Modifier.height(10.dp))
+            ImagePlaceholder(
+                imageUri = userImageUri,
+                modifier = Modifier
+                    .heightIn(max = 400.dp)
+                    .padding(20.dp)
+            )
             ImagePicker(
-                takePhotoCallback = {
+                onTakePhoto = {
                     val tempFile = File.createTempFile("photo", ".jpg", cacheDir)
                     takenPhotoUri = FileProvider.getUriForFile(
                         this@MainActivity,
@@ -82,13 +85,27 @@ class MainActivity : ComponentActivity() {
                     )
                     takePhotoLauncher.launch(takenPhotoUri)
                 },
-                pickImageCallback = {
+                onPickImage = {
                     pickImageLauncher.launch(
                         PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
                     )
-                }
+                },
+                modifier = Modifier.padding(vertical = 5.dp)
             )
-
+            AnalyzeButton(
+                imageUri = userImageUri,
+                onDisabledClick = {
+                    Toast.makeText(
+                        this@MainActivity,
+                        "Select an image to measure first!",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                },
+                onEnabledClick = {
+                    // TODO
+                },
+                modifier = Modifier.padding(vertical = 5.dp)
+            )
         }
     }
 }
