@@ -8,10 +8,10 @@ import androidx.activity.compose.setContent
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
@@ -25,7 +25,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.core.content.FileProvider
-import coil.compose.AsyncImage
 import cub.dlhf.fashionpulse.theme.FashionPulseTheme
 import java.io.File
 
@@ -68,19 +67,11 @@ class MainActivity : ComponentActivity() {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(50.dp),
-            verticalArrangement = Arrangement.Center,
+            verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            userImageUri?.let { uri ->
-                Box(
-                    contentAlignment = Alignment.Center,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .heightIn(max = 400.dp)
-                ) {
-                    AsyncImage(model = uri.toString(), contentDescription = "chosen image")
-                }
-            }
+            ImagePlaceholder(imageUri = userImageUri, modifier = Modifier.heightIn(max = 400.dp))
+            Spacer(modifier = Modifier.height(10.dp))
             ImagePicker(
                 takePhotoCallback = {
                     val tempFile = File.createTempFile("photo", ".jpg", cacheDir)
