@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Fashion.Pulse</string>
+    <string name="error_message">Your request failed... Maybe try again? \\uD83D\\uDE09</string>
 </resources>

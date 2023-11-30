@@ -128,6 +128,23 @@ fun AnalyzeButton(
     }
 }
 
+@Composable
+fun FashionResults(analysisStatus: AnalysisStatus) = when (analysisStatus) {
+    is AnalysisStatus.Idle -> {}
+    is AnalysisStatus.WaitingForResult -> {
+        Text(text = "Waiting...")
+    }
+
+    is AnalysisStatus.ResultReady -> {
+        val styleToScore = analysisStatus.styleToScore
+        Text(
+            text = styleToScore.entries
+                .sortedByDescending { it.value }
+                .joinToString("\n")
+        )
+    }
+}
+
 @Preview
 @Composable
 fun PreviewAnalyzeButton() {
