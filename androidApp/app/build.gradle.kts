@@ -21,6 +21,10 @@ android {
         }
     }
 
+    buildFeatures {
+        compose = true
+        buildConfig = true
+    }
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -28,6 +32,11 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String", "BACKEND_URL", "\"https://fashionpulse.icyglacier-6191089c.germanywestcentral.azurecontainerapps.io\"")
+        }
+        debug {
+//            buildConfigField("String", "BACKEND_URL", "\"http://10.0.2.2:8000\"")
+            buildConfigField("String", "BACKEND_URL", "\"https://fashionpulse.icyglacier-6191089c.germanywestcentral.azurecontainerapps.io\"")
         }
     }
     compileOptions {
@@ -36,9 +45,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
-    }
-    buildFeatures {
-        compose = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.4"
