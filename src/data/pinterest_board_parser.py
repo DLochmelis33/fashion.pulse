@@ -94,14 +94,16 @@ def _get_pin_count(board_url: str) -> int:
     return _parse_pin_count(board_start_page)
 
 
-def parse_pins_from_large_board(board_url: str) -> List[str]:
+def parse_pins_from_board(board_url: str, logging_enabled: bool = False) -> List[str]:
     pin_count = _get_pin_count(board_url)
-    print(f"Board's pin count: {pin_count}", end='\n\n')
+    if logging_enabled:
+        print(f"Board's pin count: {pin_count}", end='\n\n')
 
     def page_pins_combiner(all_pins: PinsCollection, page_pins: PinsCollection) -> PinsCollection:
         all_pins.update(page_pins)
         return all_pins
 
+    # TODO: use logged in selenium to get images in better resolution
     pins_ordered_dict = _parse_page_while_scrolling(
         url=board_url,
         parser=_parse_pins_from_html,
@@ -112,15 +114,12 @@ def parse_pins_from_large_board(board_url: str) -> List[str]:
         scroll_pause_time_seconds=0.5
     )
 
-    return list(pins_ordered_dict.keys())[:pin_count]
+    board_pins = list(pins_ordered_dict.keys())[:pin_count]
+    if logging_enabled:
+        print("First 5 pins:")
+        print(board_pins[:5], end='\n\n')
+        print("Last 5 pins:")
+        print(board_pins[-5:], end='\n\n')
+        print(f"Parsed pins, total: {len(board_pins)}")
 
-
-board_url = 'https://www.pinterest.com/garrettguadiana/rustic-mens-fashion/'
-# board_url = 'https://www.pinterest.com/tarateilhaber/cute-bulletin-boards/'
-
-pins = parse_pins_from_large_board(board_url)
-print("First 5 pins:")
-print(pins[:5], end='\n\n')
-print("Last 5 pins:")
-print(pins[-5:], end='\n\n')
-print(f"Parsed pins, total: {len(pins)}")
+    return board_pins
