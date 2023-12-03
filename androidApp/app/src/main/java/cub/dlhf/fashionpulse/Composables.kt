@@ -8,16 +8,22 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
@@ -31,7 +37,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import cub.dlhf.fashionpulse.theme.FashionPulseTheme
 
 @Composable
 fun ImagePicker(
@@ -97,58 +102,105 @@ fun ImagePlaceholder(
 @Composable
 fun AnalyzeButton(
     imageUri: Uri?,
+    analysisStatus: AnalysisStatus,
     onEnabledClick: (Uri) -> Unit,
     onDisabledClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val analyzeText = "Measure fashion!"
-    if (imageUri == null) {
-        OutlinedButton(
-            onClick = { onDisabledClick() },
-            modifier = modifier.fillMaxWidth()
-        ) {
-            Text(analyzeText)
+    when {
+        analysisStatus is AnalysisStatus.ResultReady || (analysisStatus is AnalysisStatus.Idle && imageUri == null) -> {
+            OutlinedButton(
+                onClick = { onDisabledClick() },
+                modifier = modifier.fillMaxWidth()
+            ) {
+                Text(analyzeText)
+            }
         }
-    } else {
-        val transition = rememberInfiniteTransition(label = "button color transition")
-        val hue by transition.animateFloat(
-            initialValue = 0f,
-            targetValue = 1f,
-            animationSpec = infiniteRepeatable(tween(6500)), label = "button hue"
-        )
-        Button(
-            onClick = { onEnabledClick(imageUri) },
-            modifier = modifier.fillMaxWidth(),
-            colors = ButtonDefaults.buttonColors(
-                containerColor = Color.hsv(hue * 360f, 0.35f, 0.8f)
+
+        analysisStatus is AnalysisStatus.WaitingForResult -> {
+            CircularProgressIndicator(
+//                modifier = Modifier.width(30.dp),
+//                color = MaterialTheme.colorScheme.secondary
             )
-        ) {
-            Text(analyzeText)
+        }
+
+        analysisStatus is AnalysisStatus.Idle && imageUri != null -> {
+            val transition = rememberInfiniteTransition(label = "button color transition")
+            val hue by transition.animateFloat(
+                initialValue = 0f,
+                targetValue = 1f,
+                animationSpec = infiniteRepeatable(tween(6500)), label = "button hue"
+            )
+            Button(
+                onClick = { onEnabledClick(imageUri) },
+                modifier = modifier.fillMaxWidth(),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color.hsv(hue * 360f, 0.35f, 0.8f)
+                )
+            ) {
+                Text(analyzeText)
+            }
         }
     }
 }
 
 @Composable
-fun FashionResults(analysisStatus: AnalysisStatus) = when (analysisStatus) {
-    is AnalysisStatus.Idle -> {}
-    is AnalysisStatus.WaitingForResult -> {
-        Text(text = "Waiting...")
+fun FashionResults(
+    result: AnalysisStatus.ResultReady,
+    modifier: Modifier = Modifier
+) {
+    val styleToScore = result.styleToScore.entries.sortedByDescending { it.value }
+    Column(
+        modifier = modifier
+            .verticalScroll(rememberScrollState())
+    ) {
+        for ((style, score) in styleToScore) {
+            Spacer(modifier = Modifier.height(10.dp))
+            FashionResultItem(style = style, score = score)
+        }
     }
+}
 
-    is AnalysisStatus.ResultReady -> {
-        val styleToScore = analysisStatus.styleToScore
-        Text(
-            text = styleToScore.entries
-                .sortedByDescending { it.value }
-                .joinToString("\n")
+@Composable
+fun FashionResultItem(style: String, score: Double) {
+    Column {
+        Row(
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(
+                text = style,
+                textAlign = TextAlign.Left,
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(horizontal = 5.dp)
+            )
+            val scoreStr = String.format("%.1f", score)
+            Text(
+                text = scoreStr,
+                textAlign = TextAlign.Right,
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(horizontal = 5.dp)
+            )
+        }
+        LinearProgressIndicator(
+            progress = score.toFloat(),
+            modifier = Modifier.fillMaxWidth()
         )
     }
 }
 
 @Preview
 @Composable
-fun PreviewAnalyzeButton() {
-    FashionPulseTheme {
-        AnalyzeButton(Uri.EMPTY, {}, {})
-    }
+fun Preview() {
+    FashionResults(
+        AnalysisStatus.ResultReady(
+            mapOf(
+                "punk" to 0.5,
+                "loser" to 1.0,
+                "nice" to 0.0,
+            )
+        )
+    )
 }

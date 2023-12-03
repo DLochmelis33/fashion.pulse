@@ -10,6 +10,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.heightIn
@@ -32,28 +33,17 @@ import io.ktor.client.call.body
 import io.ktor.client.engine.android.Android
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.defaultRequest
-import io.ktor.client.request.forms.MultiPartFormDataContent
 import io.ktor.client.request.forms.formData
 import io.ktor.client.request.forms.submitFormWithBinaryData
-import io.ktor.client.request.post
-import io.ktor.client.request.setBody
+import io.ktor.client.statement.bodyAsText
 import io.ktor.http.Headers
 import io.ktor.http.HttpHeaders
 import io.ktor.http.isSuccess
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
-import okhttp3.Call
-import okhttp3.Callback
-import okhttp3.MultipartBody
-import okhttp3.Request
-import okhttp3.RequestBody
-import okhttp3.Response
-import okio.BufferedSink
-import okio.source
+import kotlinx.coroutines.withContext
 import java.io.File
-import java.io.IOException
 
 class MainActivity : ComponentActivity() {
 
@@ -85,21 +75,24 @@ class MainActivity : ComponentActivity() {
     private fun MainScreen() {
         var takenPhotoUri: Uri? = null
         var userImageUri by remember { mutableStateOf<Uri?>(null) }
+        var analysisState by remember { mutableStateOf<AnalysisStatus>(AnalysisStatus.Idle) }
 
         val pickImageLauncher = rememberLauncherForActivityResult(
             ActivityResultContracts.PickVisualMedia()
         ) {
-            userImageUri = it
+            if (it != null) {
+                userImageUri = it
+                analysisState = AnalysisStatus.Idle
+            }
         }
         val takePhotoLauncher = rememberLauncherForActivityResult(
             ActivityResultContracts.TakePicture()
         ) { ok ->
             if (ok) {
                 userImageUri = takenPhotoUri
+                analysisState = AnalysisStatus.Idle
             }
         }
-
-        var analysisState by remember { mutableStateOf<AnalysisStatus>(AnalysisStatus.Idle) }
 
         val coroutineScope = rememberCoroutineScope()
 
@@ -109,7 +102,6 @@ class MainActivity : ComponentActivity() {
                 Toast.makeText(this@MainActivity, userMessage, Toast.LENGTH_LONG).show()
                 analysisState = AnalysisStatus.Idle
             }
-
 
         Column(
             modifier = Modifier
@@ -143,10 +135,11 @@ class MainActivity : ComponentActivity() {
             )
             AnalyzeButton(
                 imageUri = userImageUri,
+                analysisStatus = analysisState,
                 onDisabledClick = {
                     Toast.makeText(
                         this@MainActivity,
-                        "Select an image to measure first!",
+                        "Select a new image to measure!",
                         Toast.LENGTH_SHORT
                     ).show()
                 },
@@ -168,7 +161,9 @@ class MainActivity : ComponentActivity() {
                             )
                             return@launch
                         }
-                        analysisState = AnalysisStatus.WaitingForResult
+                        withContext(Dispatchers.Main) {
+                            analysisState = AnalysisStatus.WaitingForResult
+                        }
                         val response = client.submitFormWithBinaryData(formData = formData {
                             append("image", imageBytes, Headers.build {
                                 append(HttpHeaders.ContentType, mediaType)
@@ -178,18 +173,26 @@ class MainActivity : ComponentActivity() {
                         if (!response.status.isSuccess()) {
                             handleError(
                                 "Got an error from server :/",
-                                "response code is not a success: ${response.status}"
+                                "response code is not a success: ${response.status}\n${response.bodyAsText()}"
                             )
                             return@launch
                         }
                         val analysisResult = response.body<AnalysisStatus.ResultReady>()
-                        analysisState = analysisResult
+                        withContext(Dispatchers.Main) {
+                            analysisState = analysisResult
+                        }
                     }
-                    analysisState = AnalysisStatus.WaitingForResult
                 },
                 modifier = Modifier.padding(vertical = 5.dp)
             )
-            FashionResults(analysisStatus = analysisState)
+            (analysisState as? AnalysisStatus.ResultReady)?.let {
+                Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    FashionResults(result = it)
+                }
+            }
         }
     }
 
