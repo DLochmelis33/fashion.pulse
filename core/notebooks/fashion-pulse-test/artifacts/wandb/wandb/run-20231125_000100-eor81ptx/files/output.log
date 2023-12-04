@@ -1,0 +1,58 @@
+/home/loewe/.local/lib/python3.10/site-packages/pytorch_lightning/loggers/wandb.py:395: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+[34m[1mwandb[39m[22m: logging graph, to disable use `wandb.watch(log_graph=False)`
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+  | Name      | Type               | Params
+-------------------------------------------------
+0 | model     | Model              | 101 K
+1 | train_acc | MulticlassAccuracy | 0
+2 | valid_acc | MulticlassAccuracy | 0
+3 | test_acc  | MulticlassAccuracy | 0
+-------------------------------------------------
+101 K     Trainable params
+0         Non-trainable params
+101 K     Total params
+0.407     Total estimated model params size (MB)
+/home/loewe/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:224: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 16 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+/home/loewe/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:224: PossibleUserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 16 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+
+
+
+Epoch 0:  84%|█████████████████████████████████████████████████████▋          | 761/907 [00:09<00:01, 81.43it/s, loss=0.219, v_num=1ptx]
+
+
+
+
+Epoch 1:  99%|████████████████████████▊| 900/907 [00:10<00:00, 87.76it/s, loss=0.156, v_num=1ptx, val_loss=0.198, valid_acc_epoch=0.940]
+
+
+
+
+Epoch 2:  94%|████████████████████████▌ | 856/907 [00:09<00:00, 87.92it/s, loss=0.11, v_num=1ptx, val_loss=0.149, valid_acc_epoch=0.957]
+
+
+
+
+Epoch 3:  85%|████████████████████▌   | 775/907 [00:09<00:01, 84.32it/s, loss=0.0809, v_num=1ptx, val_loss=0.128, valid_acc_epoch=0.964]
+
+
+
+
+Epoch 4:  98%|███████████████████████▌| 889/907 [00:10<00:00, 85.61it/s, loss=0.0649, v_num=1ptx, val_loss=0.120, valid_acc_epoch=0.965]
+
+Validation DataLoader 0:  89%|███████████████████████████████████████████████████████████████▋        | 139/157 [00:01<00:00, 85.76it/s]
+`Trainer.fit` stopped: `max_epochs=5` reached.
+/home/loewe/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:224: PossibleUserWarning: The dataloader, test_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 16 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+Epoch 4: 100%|████████████████████████| 907/907 [00:10<00:00, 83.52it/s, loss=0.0649, v_num=1ptx, val_loss=0.123, valid_acc_epoch=0.965]
+Testing DataLoader 0: 100%|██████████████████████████████████████████████████████████████████████████| 313/313 [00:02<00:00, 124.06it/s]
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+       Test metric             DataLoader 0
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+     test_acc_epoch         0.9653000235557556
+        test_loss           0.11786127835512161
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────

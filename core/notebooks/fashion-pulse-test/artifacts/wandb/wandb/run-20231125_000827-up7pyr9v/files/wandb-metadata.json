@@ -1,0 +1,119 @@
+{
+    "os": "Linux-5.15.133.1-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "python": "3.10.6",
+    "heartbeatAt": "2023-11-24T23:08:28.359021",
+    "startedAt": "2023-11-24T23:08:27.598403",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "FashionPulseTest-jvsc-005e5f6d-26f5-4ddb-8c46-7c0f1ccace25013310d4-baaf-47a2-9c88-83c288a300d8.ipynb",
+    "codePathLocal": null,
+    "root": "/home/loewe/tabs/pro-dl",
+    "git": {
+        "remote": "git@github.com:DLochmelis33/fashion.pulse.git",
+        "commit": "7f8daf36736081bc91cd589672c872c4849a40c1"
+    },
+    "email": "lionyoung@mail.ru",
+    "host": "DameBook",
+    "username": "loewe",
+    "executable": "/usr/bin/python3",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 3193.9150000000004,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3193.915,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3193.915,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3193.915,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3193.915,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3193.915,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3193.915,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3193.915,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3193.915,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3193.915,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3193.915,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3193.915,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3193.915,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3193.915,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3193.915,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3193.915,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3193.915,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 1006.853931427002,
+            "used": 73.07051849365234
+        }
+    },
+    "memory": {
+        "total": 7.439762115478516
+    }
+}

@@ -1,0 +1,75 @@
+/home/loewe/.local/lib/python3.10/site-packages/pytorch_lightning/loggers/wandb.py:395: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+[34m[1mwandb[39m[22m: logging graph, to disable use `wandb.watch(log_graph=False)`
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+ 30%|█████████████████████████▎                                                          | 2981888/9912422 [00:01<00:03, 2165533.83it/s]
+Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
+
+
+ 99%|███████████████████████████████████████████████████████████████████████████████████▎| 9830400/9912422 [00:05<00:00, 2253344.20it/s]
+Extracting /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/MNIST/raw/train-images-idx3-ubyte.gz to /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/MNIST/raw
+Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz to /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/MNIST/raw/train-labels-idx1-ubyte.gz
+Extracting /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/MNIST/raw/train-labels-idx1-ubyte.gz to /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/MNIST/raw
+Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz to /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/MNIST/raw/t10k-images-idx3-ubyte.gz
+Extracting /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/MNIST/raw/t10k-images-idx3-ubyte.gz to /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/MNIST/raw
+Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz to /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/MNIST/raw/t10k-labels-idx1-ubyte.gz
+Extracting /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/MNIST/raw/t10k-labels-idx1-ubyte.gz to /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/MNIST/raw
+100%|████████████████████████████████████████████████████████████████████████████████████| 9912422/9912422 [00:05<00:00, 1791945.37it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████████| 28881/28881 [00:00<00:00, 3053045.69it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 1648877/1648877 [00:00<00:00, 1895578.57it/s]
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 4542/4542 [00:00<00:00, 10269826.83it/s]
+  | Name      | Type               | Params
+-------------------------------------------------
+0 | model     | Model              | 101 K
+1 | train_acc | MulticlassAccuracy | 0
+2 | valid_acc | MulticlassAccuracy | 0
+3 | test_acc  | MulticlassAccuracy | 0
+-------------------------------------------------
+101 K     Trainable params
+0         Non-trainable params
+101 K     Total params
+0.407     Total estimated model params size (MB)
+/home/loewe/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:224: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 16 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+/home/loewe/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:224: PossibleUserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 16 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+
+
+
+
+
+
+
+
+Epoch 1:  96%|████████████████████████ | 872/907 [00:09<00:00, 87.45it/s, loss=0.111, v_num=ab5n, val_loss=0.180, valid_acc_epoch=0.948]
+
+
+
+
+Epoch 2:  86%|████████████████████▋   | 780/907 [00:09<00:01, 83.36it/s, loss=0.0744, v_num=ab5n, val_loss=0.132, valid_acc_epoch=0.961]
+
+
+
+Epoch 3:  83%|███████████████████▉    | 753/907 [00:08<00:01, 89.89it/s, loss=0.0408, v_num=ab5n, val_loss=0.115, valid_acc_epoch=0.965]
+
+
+
+
+Epoch 4:  95%|██████████████████████▊ | 864/907 [00:09<00:00, 89.53it/s, loss=0.0238, v_num=ab5n, val_loss=0.115, valid_acc_epoch=0.965]
+
+Epoch 4: 100%|████████████████████████| 907/907 [00:10<00:00, 87.29it/s, loss=0.0238, v_num=ab5n, val_loss=0.116, valid_acc_epoch=0.967]
+Testing DataLoader 0: 100%|██████████████████████████████████████████████████████████████████████████| 313/313 [00:02<00:00, 136.03it/s]
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+       Test metric             DataLoader 0
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+     test_acc_epoch         0.9677000045776367
+        test_loss           0.11104405671358109
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+`Trainer.fit` stopped: `max_epochs=5` reached.
+/home/loewe/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:224: PossibleUserWarning: The dataloader, test_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 16 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(

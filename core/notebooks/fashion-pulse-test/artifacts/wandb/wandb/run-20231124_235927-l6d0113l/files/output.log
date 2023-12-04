@@ -1,0 +1,36 @@
+/home/loewe/.local/lib/python3.10/site-packages/pytorch_lightning/loggers/wandb.py:395: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+[34m[1mwandb[39m[22m: logging graph, to disable use `wandb.watch(log_graph=False)`
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+  | Name      | Type               | Params
+-------------------------------------------------
+0 | model     | Model              | 101 K
+1 | train_acc | MulticlassAccuracy | 0
+2 | valid_acc | MulticlassAccuracy | 0
+3 | test_acc  | MulticlassAccuracy | 0
+-------------------------------------------------
+101 K     Trainable params
+0         Non-trainable params
+101 K     Total params
+0.407     Total estimated model params size (MB)
+/home/loewe/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:224: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 16 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+/home/loewe/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:224: PossibleUserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 16 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+
+
+
+Epoch 0:  83%|█████████████████████████████████████████████████████▉           | 752/907 [00:09<00:01, 80.85it/s, loss=0.16, v_num=113l]
+
+
+
+
+Epoch 1:  94%|██████████████████████▍ | 850/907 [00:10<00:00, 84.20it/s, loss=0.0848, v_num=113l, val_loss=0.224, valid_acc_epoch=0.931]
+
+Validation DataLoader 0:  64%|█████████████████████████████████████████████▊                          | 100/157 [00:01<00:00, 88.35it/s]
+/home/loewe/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py:48: UserWarning: Detected KeyboardInterrupt, attempting graceful shutdown...
+
+Epoch 2:  16%|████                     | 149/907 [00:01<00:08, 85.31it/s, loss=0.117, v_num=113l, val_loss=0.182, valid_acc_epoch=0.943]

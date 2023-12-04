@@ -1,0 +1,865 @@
+2023-11-25 00:08:27,605 INFO    StreamThr :28598 [internal.py:wandb_internal():86] W&B internal server running at pid: 28598, started at: 2023-11-25 00:08:27.604578
+2023-11-25 00:08:27,606 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: status
+2023-11-25 00:08:27,608 INFO    WriterThread:28598 [datastore.py:open_for_write():85] open: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/run-up7pyr9v.wandb
+2023-11-25 00:08:27,609 DEBUG   SenderThread:28598 [sender.py:send():380] send: header
+2023-11-25 00:08:27,697 DEBUG   SenderThread:28598 [sender.py:send():380] send: run
+2023-11-25 00:08:28,224 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: check_version
+2023-11-25 00:08:28,229 INFO    SenderThread:28598 [dir_watcher.py:__init__():211] watching files in: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files
+2023-11-25 00:08:28,230 INFO    SenderThread:28598 [sender.py:_start_run_threads():1124] run started: up7pyr9v with start time 1700867307.604047
+2023-11-25 00:08:28,230 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: check_version
+2023-11-25 00:08:28,348 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: run_start
+2023-11-25 00:08:28,348 DEBUG   HandlerThread:28598 [system_info.py:__init__():32] System info init
+2023-11-25 00:08:28,348 DEBUG   HandlerThread:28598 [system_info.py:__init__():47] System info init done
+2023-11-25 00:08:28,348 INFO    HandlerThread:28598 [system_monitor.py:start():194] Starting system monitor
+2023-11-25 00:08:28,349 INFO    SystemMonitor:28598 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2023-11-25 00:08:28,349 INFO    HandlerThread:28598 [system_monitor.py:probe():214] Collecting system info
+2023-11-25 00:08:28,349 INFO    SystemMonitor:28598 [interfaces.py:start():190] Started cpu monitoring
+2023-11-25 00:08:28,350 INFO    SystemMonitor:28598 [interfaces.py:start():190] Started disk monitoring
+2023-11-25 00:08:28,350 INFO    SystemMonitor:28598 [interfaces.py:start():190] Started memory monitoring
+2023-11-25 00:08:28,351 INFO    SystemMonitor:28598 [interfaces.py:start():190] Started network monitoring
+2023-11-25 00:08:28,358 DEBUG   HandlerThread:28598 [system_info.py:probe():196] Probing system
+2023-11-25 00:08:28,359 DEBUG   HandlerThread:28598 [system_info.py:_probe_git():181] Probing git
+2023-11-25 00:08:28,362 DEBUG   HandlerThread:28598 [system_info.py:_probe_git():189] Probing git done
+2023-11-25 00:08:28,362 DEBUG   HandlerThread:28598 [system_info.py:probe():244] Probing system done
+2023-11-25 00:08:28,362 DEBUG   HandlerThread:28598 [system_monitor.py:probe():223] {'os': 'Linux-5.15.133.1-microsoft-standard-WSL2-x86_64-with-glibc2.35', 'python': '3.10.6', 'heartbeatAt': '2023-11-24T23:08:28.359021', 'startedAt': '2023-11-24T23:08:27.598403', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'FashionPulseTest-jvsc-005e5f6d-26f5-4ddb-8c46-7c0f1ccace25013310d4-baaf-47a2-9c88-83c288a300d8.ipynb', 'codePathLocal': None, 'root': '/home/loewe/tabs/pro-dl', 'git': {'remote': 'git@github.com:DLochmelis33/fashion.pulse.git', 'commit': '7f8daf36736081bc91cd589672c872c4849a40c1'}, 'email': 'lionyoung@mail.ru', 'host': 'DameBook', 'username': 'loewe', 'executable': '/usr/bin/python3', 'cpu_count': 8, 'cpu_count_logical': 16, 'cpu_freq': {'current': 3193.9150000000004, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 3193.915, 'min': 0.0, 'max': 0.0}, {'current': 3193.915, 'min': 0.0, 'max': 0.0}, {'current': 3193.915, 'min': 0.0, 'max': 0.0}, {'current': 3193.915, 'min': 0.0, 'max': 0.0}, {'current': 3193.915, 'min': 0.0, 'max': 0.0}, {'current': 3193.915, 'min': 0.0, 'max': 0.0}, {'current': 3193.915, 'min': 0.0, 'max': 0.0}, {'current': 3193.915, 'min': 0.0, 'max': 0.0}, {'current': 3193.915, 'min': 0.0, 'max': 0.0}, {'current': 3193.915, 'min': 0.0, 'max': 0.0}, {'current': 3193.915, 'min': 0.0, 'max': 0.0}, {'current': 3193.915, 'min': 0.0, 'max': 0.0}, {'current': 3193.915, 'min': 0.0, 'max': 0.0}, {'current': 3193.915, 'min': 0.0, 'max': 0.0}, {'current': 3193.915, 'min': 0.0, 'max': 0.0}, {'current': 3193.915, 'min': 0.0, 'max': 0.0}], 'disk': {'/': {'total': 1006.853931427002, 'used': 73.07051849365234}}, 'memory': {'total': 7.439762115478516}}
+2023-11-25 00:08:28,362 INFO    HandlerThread:28598 [system_monitor.py:probe():224] Finished collecting system info
+2023-11-25 00:08:28,363 INFO    HandlerThread:28598 [system_monitor.py:probe():227] Publishing system info
+2023-11-25 00:08:28,363 DEBUG   HandlerThread:28598 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2023-11-25 00:08:28,363 DEBUG   HandlerThread:28598 [system_info.py:_save_pip():68] Saving pip packages done
+2023-11-25 00:08:28,363 INFO    HandlerThread:28598 [system_monitor.py:probe():229] Finished publishing system info
+2023-11-25 00:08:28,366 DEBUG   SenderThread:28598 [sender.py:send():380] send: files
+2023-11-25 00:08:28,366 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-metadata.json with policy now
+2023-11-25 00:08:28,380 DEBUG   SenderThread:28598 [sender.py:send():380] send: telemetry
+2023-11-25 00:08:28,425 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-25 00:08:28,425 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-25 00:08:28,426 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: pause
+2023-11-25 00:08:28,426 INFO    HandlerThread:28598 [handler.py:handle_request_pause():705] stopping system metrics thread
+2023-11-25 00:08:28,426 INFO    HandlerThread:28598 [system_monitor.py:finish():203] Stopping system monitor
+2023-11-25 00:08:28,427 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: stop_status
+2023-11-25 00:08:28,432 INFO    HandlerThread:28598 [interfaces.py:finish():202] Joined cpu monitor
+2023-11-25 00:08:28,432 DEBUG   SystemMonitor:28598 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2023-11-25 00:08:28,433 INFO    HandlerThread:28598 [interfaces.py:finish():202] Joined disk monitor
+2023-11-25 00:08:28,433 DEBUG   SystemMonitor:28598 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2023-11-25 00:08:28,434 INFO    HandlerThread:28598 [interfaces.py:finish():202] Joined memory monitor
+2023-11-25 00:08:28,434 DEBUG   SystemMonitor:28598 [system_monitor.py:_start():183] Publishing last batch of metrics
+2023-11-25 00:08:28,434 INFO    HandlerThread:28598 [interfaces.py:finish():202] Joined network monitor
+2023-11-25 00:08:28,435 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: resume
+2023-11-25 00:08:28,435 INFO    HandlerThread:28598 [handler.py:handle_request_resume():696] starting system metrics thread
+2023-11-25 00:08:28,435 INFO    HandlerThread:28598 [system_monitor.py:start():194] Starting system monitor
+2023-11-25 00:08:28,435 INFO    SystemMonitor:28598 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2023-11-25 00:08:28,436 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: pause
+2023-11-25 00:08:28,436 INFO    SystemMonitor:28598 [interfaces.py:start():190] Started cpu monitoring
+2023-11-25 00:08:28,437 INFO    HandlerThread:28598 [handler.py:handle_request_pause():705] stopping system metrics thread
+2023-11-25 00:08:28,437 INFO    HandlerThread:28598 [system_monitor.py:finish():203] Stopping system monitor
+2023-11-25 00:08:28,438 INFO    SystemMonitor:28598 [interfaces.py:start():190] Started disk monitoring
+2023-11-25 00:08:28,439 DEBUG   SystemMonitor:28598 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2023-11-25 00:08:28,439 DEBUG   SystemMonitor:28598 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2023-11-25 00:08:28,439 DEBUG   SystemMonitor:28598 [system_monitor.py:_start():183] Publishing last batch of metrics
+2023-11-25 00:08:28,440 INFO    HandlerThread:28598 [interfaces.py:finish():202] Joined cpu monitor
+2023-11-25 00:08:28,440 INFO    HandlerThread:28598 [interfaces.py:finish():202] Joined disk monitor
+2023-11-25 00:08:28,450 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: resume
+2023-11-25 00:08:28,450 INFO    HandlerThread:28598 [handler.py:handle_request_resume():696] starting system metrics thread
+2023-11-25 00:08:28,450 INFO    HandlerThread:28598 [system_monitor.py:start():194] Starting system monitor
+2023-11-25 00:08:28,450 INFO    SystemMonitor:28598 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2023-11-25 00:08:28,451 INFO    SystemMonitor:28598 [interfaces.py:start():190] Started cpu monitoring
+2023-11-25 00:08:28,452 INFO    SystemMonitor:28598 [interfaces.py:start():190] Started disk monitoring
+2023-11-25 00:08:28,452 INFO    SystemMonitor:28598 [interfaces.py:start():190] Started memory monitoring
+2023-11-25 00:08:28,453 INFO    SystemMonitor:28598 [interfaces.py:start():190] Started network monitoring
+2023-11-25 00:08:28,455 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: pause
+2023-11-25 00:08:28,456 INFO    HandlerThread:28598 [handler.py:handle_request_pause():705] stopping system metrics thread
+2023-11-25 00:08:28,457 INFO    HandlerThread:28598 [system_monitor.py:finish():203] Stopping system monitor
+2023-11-25 00:08:28,457 DEBUG   SystemMonitor:28598 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2023-11-25 00:08:28,457 DEBUG   SystemMonitor:28598 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2023-11-25 00:08:28,457 DEBUG   SystemMonitor:28598 [system_monitor.py:_start():183] Publishing last batch of metrics
+2023-11-25 00:08:28,458 INFO    HandlerThread:28598 [interfaces.py:finish():202] Joined cpu monitor
+2023-11-25 00:08:28,460 INFO    HandlerThread:28598 [interfaces.py:finish():202] Joined disk monitor
+2023-11-25 00:08:28,460 INFO    HandlerThread:28598 [interfaces.py:finish():202] Joined memory monitor
+2023-11-25 00:08:28,460 INFO    HandlerThread:28598 [interfaces.py:finish():202] Joined network monitor
+2023-11-25 00:08:28,511 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: resume
+2023-11-25 00:08:28,512 INFO    HandlerThread:28598 [handler.py:handle_request_resume():696] starting system metrics thread
+2023-11-25 00:08:28,512 INFO    HandlerThread:28598 [system_monitor.py:start():194] Starting system monitor
+2023-11-25 00:08:28,512 INFO    SystemMonitor:28598 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2023-11-25 00:08:28,512 INFO    SystemMonitor:28598 [interfaces.py:start():190] Started cpu monitoring
+2023-11-25 00:08:28,513 INFO    SystemMonitor:28598 [interfaces.py:start():190] Started disk monitoring
+2023-11-25 00:08:28,515 INFO    SystemMonitor:28598 [interfaces.py:start():190] Started memory monitoring
+2023-11-25 00:08:28,516 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: pause
+2023-11-25 00:08:28,516 INFO    SystemMonitor:28598 [interfaces.py:start():190] Started network monitoring
+2023-11-25 00:08:28,516 INFO    HandlerThread:28598 [handler.py:handle_request_pause():705] stopping system metrics thread
+2023-11-25 00:08:28,518 INFO    HandlerThread:28598 [system_monitor.py:finish():203] Stopping system monitor
+2023-11-25 00:08:28,518 DEBUG   SystemMonitor:28598 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2023-11-25 00:08:28,518 INFO    HandlerThread:28598 [interfaces.py:finish():202] Joined cpu monitor
+2023-11-25 00:08:28,518 DEBUG   SystemMonitor:28598 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2023-11-25 00:08:28,520 DEBUG   SystemMonitor:28598 [system_monitor.py:_start():183] Publishing last batch of metrics
+2023-11-25 00:08:28,521 INFO    HandlerThread:28598 [interfaces.py:finish():202] Joined disk monitor
+2023-11-25 00:08:28,521 INFO    HandlerThread:28598 [interfaces.py:finish():202] Joined memory monitor
+2023-11-25 00:08:28,521 INFO    HandlerThread:28598 [interfaces.py:finish():202] Joined network monitor
+2023-11-25 00:08:28,578 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: resume
+2023-11-25 00:08:28,578 INFO    HandlerThread:28598 [handler.py:handle_request_resume():696] starting system metrics thread
+2023-11-25 00:08:28,578 INFO    HandlerThread:28598 [system_monitor.py:start():194] Starting system monitor
+2023-11-25 00:08:28,578 INFO    SystemMonitor:28598 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2023-11-25 00:08:28,579 INFO    SystemMonitor:28598 [interfaces.py:start():190] Started cpu monitoring
+2023-11-25 00:08:28,579 INFO    SystemMonitor:28598 [interfaces.py:start():190] Started disk monitoring
+2023-11-25 00:08:28,580 INFO    SystemMonitor:28598 [interfaces.py:start():190] Started memory monitoring
+2023-11-25 00:08:28,581 INFO    SystemMonitor:28598 [interfaces.py:start():190] Started network monitoring
+2023-11-25 00:08:28,991 DEBUG   SenderThread:28598 [sender.py:send():380] send: stats
+2023-11-25 00:08:28,992 DEBUG   SenderThread:28598 [sender.py:send():380] send: stats
+2023-11-25 00:08:28,992 DEBUG   SenderThread:28598 [sender.py:send():380] send: stats
+2023-11-25 00:08:28,992 DEBUG   SenderThread:28598 [sender.py:send():380] send: telemetry
+2023-11-25 00:08:28,992 DEBUG   SenderThread:28598 [sender.py:send():380] send: config
+2023-11-25 00:08:28,992 DEBUG   SenderThread:28598 [sender.py:send():380] send: telemetry
+2023-11-25 00:08:29,231 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_created():271] file/dir created: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/requirements.txt
+2023-11-25 00:08:29,231 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_created():271] file/dir created: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-metadata.json
+2023-11-25 00:08:29,232 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_created():271] file/dir created: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:08:29,631 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:29,632 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:29,632 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:29,632 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:29,714 INFO    wandb-upload_0:28598 [upload_job.py:push():131] Uploaded file /tmp/tmpgjnz77twwandb/mbjb3s2d-wandb-metadata.json
+2023-11-25 00:08:30,231 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_created():271] file/dir created: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:08:30,498 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:30,499 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:30,500 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:30,502 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:30,511 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:30,513 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:30,514 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:30,516 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:31,145 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:31,146 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:31,146 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:31,147 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:31,232 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:08:31,233 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:08:31,790 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:31,790 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:31,791 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:31,792 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:31,795 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:31,797 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:31,797 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:31,798 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:32,234 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:08:32,446 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:32,446 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:32,446 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:32,447 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:32,616 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: status_report
+2023-11-25 00:08:33,064 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:33,064 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:33,065 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:33,066 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:33,071 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:33,073 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:33,073 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:33,074 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:33,235 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:08:33,235 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:08:33,825 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:33,825 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:33,826 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:33,826 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:34,235 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:08:34,462 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:34,463 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:34,463 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:34,464 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:34,468 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:34,470 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:34,470 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:34,471 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:35,051 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:35,052 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:35,052 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:35,052 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:35,237 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:08:35,237 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:08:35,618 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:35,619 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:35,619 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:35,620 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:35,624 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:35,638 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:35,638 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:35,639 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:36,199 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:36,200 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:36,200 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:36,201 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:36,237 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:08:36,796 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:36,796 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:36,797 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:36,797 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:36,801 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:36,802 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:36,802 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:36,803 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:37,237 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:08:37,238 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:08:37,373 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:37,373 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:37,373 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:37,374 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:37,620 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: status_report
+2023-11-25 00:08:37,928 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:37,928 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:37,928 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:37,929 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:37,933 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:37,934 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:37,935 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:37,935 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:38,238 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:08:38,514 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:38,515 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:38,516 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:38,516 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:39,239 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:08:39,239 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:08:40,249 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:40,250 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:40,250 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:40,252 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:40,515 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: log_artifact
+2023-11-25 00:08:40,515 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: log_artifact
+2023-11-25 00:08:41,100 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:41,101 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:41,101 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:41,102 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:41,107 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:41,240 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:08:41,240 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:08:41,691 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:42,274 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:42,274 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:42,274 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:42,275 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:42,280 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:42,846 INFO    wandb-upload_0:28598 [upload_job.py:push():89] Uploaded file /home/loewe/.local/share/wandb/artifacts/staging/tmp96kvvjbo
+2023-11-25 00:08:42,861 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:43,381 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-25 00:08:43,382 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-25 00:08:43,436 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:43,437 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:43,485 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:43,485 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:43,485 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:43,645 INFO    SenderThread:28598 [sender.py:send_request_log_artifact():1446] logged artifact model-up7pyr9v - {'id': 'QXJ0aWZhY3Q6NjQ4MzMxOTkw', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjExODU2Mjk1Mw==', 'latestArtifact': None}}
+2023-11-25 00:08:43,647 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:43,647 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:43,648 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: status_report
+2023-11-25 00:08:43,650 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:43,651 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:43,652 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:43,660 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:43,661 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:43,662 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:43,663 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:43,664 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:43,664 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:43,664 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:43,666 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: stop_status
+2023-11-25 00:08:43,878 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:43,878 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:43,879 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:44,057 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:44,057 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:44,057 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:44,058 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:44,342 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:08:44,675 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:44,675 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:44,675 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:44,676 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:44,681 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:44,697 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:44,698 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:44,698 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:45,306 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:45,307 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:45,307 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:45,307 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:45,344 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:08:45,344 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:08:45,902 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:45,902 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:45,903 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:45,903 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:45,931 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:45,934 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:45,935 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:45,937 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:46,344 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:08:46,494 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:46,494 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:46,495 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:46,495 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:47,080 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:47,081 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:47,081 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:47,081 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:47,085 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:47,087 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:47,087 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:47,088 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:47,344 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:08:47,344 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:08:47,689 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:47,690 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:47,690 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:47,691 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:48,277 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:48,278 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:48,278 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:48,279 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:48,282 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:48,283 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:48,283 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:48,286 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:48,345 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:08:48,647 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: status_report
+2023-11-25 00:08:48,849 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:48,850 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:48,850 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:48,850 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:49,345 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:08:49,345 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:08:49,399 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:49,399 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:49,399 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:49,400 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:49,403 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:49,418 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:49,419 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:49,420 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:50,346 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:08:51,257 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:51,258 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:51,258 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:51,270 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:51,346 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:08:51,347 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:08:51,512 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: log_artifact
+2023-11-25 00:08:51,513 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: log_artifact
+2023-11-25 00:08:52,085 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:52,667 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:52,668 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:52,668 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:52,669 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:52,674 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:53,264 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:53,348 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:08:53,531 INFO    wandb-upload_0:28598 [upload_job.py:push():89] Uploaded file /home/loewe/.local/share/wandb/artifacts/staging/tmpgcs31nfm
+2023-11-25 00:08:53,809 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:53,809 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:53,809 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:53,810 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:53,814 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:54,365 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:54,917 INFO    SenderThread:28598 [sender.py:send_request_log_artifact():1446] logged artifact model-up7pyr9v - {'id': 'QXJ0aWZhY3Q6NjQ4MzMyMDY0', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjExODU2Mjk1Mw==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NjQ4MzMxOTkw', 'versionIndex': 0}}}
+2023-11-25 00:08:54,918 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:54,919 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:54,919 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: status_report
+2023-11-25 00:08:54,920 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:54,921 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:54,921 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:54,922 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:54,923 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:54,923 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:54,924 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:54,925 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:54,925 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:54,926 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:54,927 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:54,927 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:54,927 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:54,964 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:54,965 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:54,965 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:54,965 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:54,965 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:54,968 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:54,968 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:54,969 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:55,423 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:08:55,516 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:55,516 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:55,517 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:55,519 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:56,108 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:56,108 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:56,108 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:56,109 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:56,113 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:56,114 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:56,115 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:56,116 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:56,419 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:08:56,703 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:56,703 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:56,703 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:56,704 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:57,283 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:57,284 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:57,284 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:57,285 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:57,289 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:57,302 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:57,303 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:57,304 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:57,420 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:08:57,420 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:08:57,866 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:57,866 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:57,867 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:57,869 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:58,381 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-25 00:08:58,382 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-25 00:08:58,383 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: stop_status
+2023-11-25 00:08:58,421 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:08:58,459 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:58,460 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:58,460 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:58,461 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:58,465 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:58,562 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:58,562 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:58,563 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:59,089 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:59,090 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:59,090 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:59,091 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:59,422 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:08:59,422 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:08:59,696 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:59,696 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:59,696 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:59,697 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:59,702 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:08:59,704 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:08:59,704 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:08:59,704 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:08:59,925 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: status_report
+2023-11-25 00:09:00,398 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:00,398 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:00,398 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:00,400 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:00,423 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:09:00,423 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/config.yaml
+2023-11-25 00:09:01,423 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:09:02,257 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:02,258 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:02,258 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:02,259 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:02,424 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:09:02,522 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: log_artifact
+2023-11-25 00:09:02,523 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: log_artifact
+2023-11-25 00:09:03,210 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:03,210 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:03,211 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:03,211 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:03,215 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:03,425 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:09:03,830 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:04,451 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:04,451 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:04,451 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:04,452 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:04,456 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:04,543 INFO    wandb-upload_0:28598 [upload_job.py:push():89] Uploaded file /home/loewe/.local/share/wandb/artifacts/staging/tmpkzwvfow9
+2023-11-25 00:09:05,204 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:05,495 INFO    SenderThread:28598 [sender.py:send_request_log_artifact():1446] logged artifact model-up7pyr9v - {'id': 'QXJ0aWZhY3Q6NjQ4MzMyMTI3', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjExODU2Mjk1Mw==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NjQ4MzMyMDY0', 'versionIndex': 1}}}
+2023-11-25 00:09:05,496 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:05,497 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:05,498 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: status_report
+2023-11-25 00:09:05,500 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:05,501 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:05,501 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:05,502 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:05,503 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:05,504 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:05,505 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:05,506 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:05,506 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:05,507 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:05,896 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:05,897 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:05,898 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:05,899 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:05,904 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:05,907 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:05,908 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:05,909 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:06,429 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:09:06,640 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:06,644 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:06,645 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:06,648 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:07,198 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:07,198 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:07,198 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:07,199 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:07,203 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:07,204 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:07,205 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:07,205 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:07,429 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:09:07,430 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:09:07,793 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:07,793 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:07,793 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:07,795 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:08,394 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:08,394 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:08,394 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:08,395 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:08,398 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:08,400 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:08,400 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:08,401 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:08,430 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:09:08,996 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:08,996 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:08,996 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:08,997 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:09,431 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:09:09,432 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:09:09,573 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:09,573 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:09,573 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:09,574 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:09,579 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:09,590 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:09,591 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:09,591 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:10,183 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:10,194 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:10,194 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:10,196 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:10,432 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:09:10,503 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: status_report
+2023-11-25 00:09:10,842 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:10,842 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:10,842 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:10,843 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:10,847 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:10,862 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:10,862 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:10,863 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:11,434 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:09:11,434 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:09:11,476 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:11,476 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:11,476 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:11,477 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:12,091 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:12,091 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:12,092 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:12,092 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:12,096 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:12,098 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:12,098 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:12,099 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:12,434 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:09:13,385 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-25 00:09:13,385 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-25 00:09:13,386 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: stop_status
+2023-11-25 00:09:13,436 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:09:14,001 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:14,001 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:14,002 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:14,003 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:14,233 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: log_artifact
+2023-11-25 00:09:14,233 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: log_artifact
+2023-11-25 00:09:14,438 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:09:14,831 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:15,406 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:15,407 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:15,407 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:15,408 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:15,413 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:15,439 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:09:16,062 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:16,596 INFO    wandb-upload_0:28598 [upload_job.py:push():89] Uploaded file /home/loewe/.local/share/wandb/artifacts/staging/tmpvf33ccrw
+2023-11-25 00:09:16,646 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:16,646 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:16,646 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:16,647 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:16,650 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:17,204 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:17,547 INFO    SenderThread:28598 [sender.py:send_request_log_artifact():1446] logged artifact model-up7pyr9v - {'id': 'QXJ0aWZhY3Q6NjQ4MzMyMjA0', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjExODU2Mjk1Mw==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NjQ4MzMyMTI3', 'versionIndex': 2}}}
+2023-11-25 00:09:17,548 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:17,549 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: status_report
+2023-11-25 00:09:17,549 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:17,551 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:17,553 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:17,553 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:17,555 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:17,556 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:17,556 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:17,557 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:17,558 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:17,558 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:17,559 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:17,560 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:17,560 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:17,560 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:17,766 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:17,766 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:17,772 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:17,780 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:17,782 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:17,784 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:17,785 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:17,785 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:18,336 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:18,337 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:18,337 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:18,338 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:18,441 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:09:18,892 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:18,892 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:18,893 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:18,893 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:18,897 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:18,898 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:18,898 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:18,899 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:19,442 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:09:19,443 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:09:19,462 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:19,462 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:19,462 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:19,463 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:20,041 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:20,041 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:20,041 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:20,042 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:20,046 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:20,048 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:20,049 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:20,051 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:20,444 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:09:20,668 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:20,669 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:20,669 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:20,670 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:21,241 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:21,241 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:21,242 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:21,242 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:21,246 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:21,248 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:21,248 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:21,249 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:21,444 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:09:21,444 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:09:21,827 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:21,828 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:21,828 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:21,829 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:22,416 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:22,417 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:22,417 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:22,418 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:22,421 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:22,425 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:22,425 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:22,427 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:22,444 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:09:22,560 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: status_report
+2023-11-25 00:09:22,997 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:23,008 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:23,008 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:23,009 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:23,446 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:09:23,446 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:09:24,812 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:24,813 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:24,813 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:24,817 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:25,067 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: log_artifact
+2023-11-25 00:09:25,067 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: log_artifact
+2023-11-25 00:09:25,075 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: pause
+2023-11-25 00:09:25,075 INFO    HandlerThread:28598 [handler.py:handle_request_pause():705] stopping system metrics thread
+2023-11-25 00:09:25,075 INFO    HandlerThread:28598 [system_monitor.py:finish():203] Stopping system monitor
+2023-11-25 00:09:25,076 DEBUG   SystemMonitor:28598 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2023-11-25 00:09:25,076 INFO    HandlerThread:28598 [interfaces.py:finish():202] Joined cpu monitor
+2023-11-25 00:09:25,076 DEBUG   SystemMonitor:28598 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2023-11-25 00:09:25,076 DEBUG   SystemMonitor:28598 [system_monitor.py:_start():183] Publishing last batch of metrics
+2023-11-25 00:09:25,076 INFO    HandlerThread:28598 [interfaces.py:finish():202] Joined disk monitor
+2023-11-25 00:09:25,077 INFO    HandlerThread:28598 [interfaces.py:finish():202] Joined memory monitor
+2023-11-25 00:09:25,077 INFO    HandlerThread:28598 [interfaces.py:finish():202] Joined network monitor
+2023-11-25 00:09:25,083 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: resume
+2023-11-25 00:09:25,083 INFO    HandlerThread:28598 [handler.py:handle_request_resume():696] starting system metrics thread
+2023-11-25 00:09:25,083 INFO    HandlerThread:28598 [system_monitor.py:start():194] Starting system monitor
+2023-11-25 00:09:25,083 INFO    SystemMonitor:28598 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2023-11-25 00:09:25,083 INFO    SystemMonitor:28598 [interfaces.py:start():190] Started cpu monitoring
+2023-11-25 00:09:25,084 INFO    SystemMonitor:28598 [interfaces.py:start():190] Started disk monitoring
+2023-11-25 00:09:25,084 INFO    SystemMonitor:28598 [interfaces.py:start():190] Started memory monitoring
+2023-11-25 00:09:25,085 INFO    SystemMonitor:28598 [interfaces.py:start():190] Started network monitoring
+2023-11-25 00:09:25,447 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:09:25,447 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:09:27,047 INFO    wandb-upload_0:28598 [upload_job.py:push():89] Uploaded file /home/loewe/.local/share/wandb/artifacts/staging/tmppyrk1bq0
+2023-11-25 00:09:27,448 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:09:27,663 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-25 00:09:27,670 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: pause
+2023-11-25 00:09:27,670 INFO    HandlerThread:28598 [handler.py:handle_request_pause():705] stopping system metrics thread
+2023-11-25 00:09:27,670 INFO    HandlerThread:28598 [system_monitor.py:finish():203] Stopping system monitor
+2023-11-25 00:09:27,671 INFO    HandlerThread:28598 [interfaces.py:finish():202] Joined cpu monitor
+2023-11-25 00:09:27,671 INFO    HandlerThread:28598 [interfaces.py:finish():202] Joined disk monitor
+2023-11-25 00:09:27,671 INFO    HandlerThread:28598 [interfaces.py:finish():202] Joined memory monitor
+2023-11-25 00:09:27,671 DEBUG   SystemMonitor:28598 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2023-11-25 00:09:27,671 DEBUG   SystemMonitor:28598 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2023-11-25 00:09:27,671 DEBUG   SystemMonitor:28598 [system_monitor.py:_start():183] Publishing last batch of metrics
+2023-11-25 00:09:27,672 INFO    HandlerThread:28598 [interfaces.py:finish():202] Joined network monitor
+2023-11-25 00:09:27,721 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: resume
+2023-11-25 00:09:27,721 INFO    HandlerThread:28598 [handler.py:handle_request_resume():696] starting system metrics thread
+2023-11-25 00:09:27,721 INFO    HandlerThread:28598 [system_monitor.py:start():194] Starting system monitor
+2023-11-25 00:09:27,721 INFO    SystemMonitor:28598 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2023-11-25 00:09:27,722 INFO    SystemMonitor:28598 [interfaces.py:start():190] Started cpu monitoring
+2023-11-25 00:09:27,723 INFO    SystemMonitor:28598 [interfaces.py:start():190] Started disk monitoring
+2023-11-25 00:09:27,724 INFO    SystemMonitor:28598 [interfaces.py:start():190] Started memory monitoring
+2023-11-25 00:09:27,725 INFO    SystemMonitor:28598 [interfaces.py:start():190] Started network monitoring
+2023-11-25 00:09:27,895 INFO    SenderThread:28598 [sender.py:send_request_log_artifact():1446] logged artifact model-up7pyr9v - {'id': 'QXJ0aWZhY3Q6NjQ4MzMyMjgw', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjExODU2Mjk1Mw==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NjQ4MzMyMjA0', 'versionIndex': 3}}}
+2023-11-25 00:09:27,895 DEBUG   SenderThread:28598 [sender.py:send():380] send: stats
+2023-11-25 00:09:27,898 DEBUG   SenderThread:28598 [sender.py:send():380] send: history
+2023-11-25 00:09:27,898 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: summary_record
+2023-11-25 00:09:27,899 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: status_report
+2023-11-25 00:09:27,899 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:27,900 DEBUG   SenderThread:28598 [sender.py:send():380] send: stats
+2023-11-25 00:09:27,900 DEBUG   SenderThread:28598 [sender.py:send():380] send: telemetry
+2023-11-25 00:09:27,900 DEBUG   SenderThread:28598 [sender.py:send():380] send: exit
+2023-11-25 00:09:27,900 INFO    SenderThread:28598 [sender.py:send_exit():585] handling exit code: 0
+2023-11-25 00:09:27,900 INFO    SenderThread:28598 [sender.py:send_exit():587] handling runtime: 59
+2023-11-25 00:09:27,901 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:27,901 INFO    SenderThread:28598 [sender.py:send_exit():593] send defer
+2023-11-25 00:09:27,901 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: defer
+2023-11-25 00:09:27,901 INFO    HandlerThread:28598 [handler.py:handle_request_defer():172] handle defer: 0
+2023-11-25 00:09:27,901 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: defer
+2023-11-25 00:09:27,901 INFO    SenderThread:28598 [sender.py:send_request_defer():609] handle sender defer: 0
+2023-11-25 00:09:27,901 INFO    SenderThread:28598 [sender.py:transition_state():613] send defer: 1
+2023-11-25 00:09:27,902 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: defer
+2023-11-25 00:09:27,902 INFO    HandlerThread:28598 [handler.py:handle_request_defer():172] handle defer: 1
+2023-11-25 00:09:27,902 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: defer
+2023-11-25 00:09:27,902 INFO    SenderThread:28598 [sender.py:send_request_defer():609] handle sender defer: 1
+2023-11-25 00:09:27,902 INFO    SenderThread:28598 [sender.py:transition_state():613] send defer: 2
+2023-11-25 00:09:27,902 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: defer
+2023-11-25 00:09:27,902 INFO    HandlerThread:28598 [handler.py:handle_request_defer():172] handle defer: 2
+2023-11-25 00:09:27,902 INFO    HandlerThread:28598 [system_monitor.py:finish():203] Stopping system monitor
+2023-11-25 00:09:27,902 DEBUG   SystemMonitor:28598 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2023-11-25 00:09:27,902 DEBUG   SystemMonitor:28598 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2023-11-25 00:09:27,902 DEBUG   SystemMonitor:28598 [system_monitor.py:_start():183] Publishing last batch of metrics
+2023-11-25 00:09:27,903 INFO    HandlerThread:28598 [interfaces.py:finish():202] Joined cpu monitor
+2023-11-25 00:09:27,903 INFO    HandlerThread:28598 [interfaces.py:finish():202] Joined disk monitor
+2023-11-25 00:09:27,903 INFO    HandlerThread:28598 [interfaces.py:finish():202] Joined memory monitor
+2023-11-25 00:09:27,903 INFO    HandlerThread:28598 [interfaces.py:finish():202] Joined network monitor
+2023-11-25 00:09:27,904 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: defer
+2023-11-25 00:09:27,904 INFO    SenderThread:28598 [sender.py:send_request_defer():609] handle sender defer: 2
+2023-11-25 00:09:27,904 INFO    SenderThread:28598 [sender.py:transition_state():613] send defer: 3
+2023-11-25 00:09:27,904 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: defer
+2023-11-25 00:09:27,904 INFO    HandlerThread:28598 [handler.py:handle_request_defer():172] handle defer: 3
+2023-11-25 00:09:27,904 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: defer
+2023-11-25 00:09:27,904 INFO    SenderThread:28598 [sender.py:send_request_defer():609] handle sender defer: 3
+2023-11-25 00:09:27,904 INFO    SenderThread:28598 [sender.py:transition_state():613] send defer: 4
+2023-11-25 00:09:27,904 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: defer
+2023-11-25 00:09:27,904 INFO    HandlerThread:28598 [handler.py:handle_request_defer():172] handle defer: 4
+2023-11-25 00:09:27,905 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: defer
+2023-11-25 00:09:27,905 INFO    SenderThread:28598 [sender.py:send_request_defer():609] handle sender defer: 4
+2023-11-25 00:09:27,905 INFO    SenderThread:28598 [sender.py:transition_state():613] send defer: 5
+2023-11-25 00:09:27,905 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: defer
+2023-11-25 00:09:27,905 INFO    HandlerThread:28598 [handler.py:handle_request_defer():172] handle defer: 5
+2023-11-25 00:09:27,905 DEBUG   SenderThread:28598 [sender.py:send():380] send: summary
+2023-11-25 00:09:27,906 INFO    SenderThread:28598 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-25 00:09:27,906 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: defer
+2023-11-25 00:09:27,906 INFO    SenderThread:28598 [sender.py:send_request_defer():609] handle sender defer: 5
+2023-11-25 00:09:27,906 INFO    SenderThread:28598 [sender.py:transition_state():613] send defer: 6
+2023-11-25 00:09:27,906 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: defer
+2023-11-25 00:09:27,906 INFO    HandlerThread:28598 [handler.py:handle_request_defer():172] handle defer: 6
+2023-11-25 00:09:27,907 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: defer
+2023-11-25 00:09:27,907 INFO    SenderThread:28598 [sender.py:send_request_defer():609] handle sender defer: 6
+2023-11-25 00:09:27,909 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: status_report
+2023-11-25 00:09:28,160 INFO    SenderThread:28598 [sender.py:transition_state():613] send defer: 7
+2023-11-25 00:09:28,160 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: defer
+2023-11-25 00:09:28,161 INFO    HandlerThread:28598 [handler.py:handle_request_defer():172] handle defer: 7
+2023-11-25 00:09:28,161 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: defer
+2023-11-25 00:09:28,161 INFO    SenderThread:28598 [sender.py:send_request_defer():609] handle sender defer: 7
+2023-11-25 00:09:28,473 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:09:28,473 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/config.yaml
+2023-11-25 00:09:28,767 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-25 00:09:29,310 INFO    SenderThread:28598 [sender.py:transition_state():613] send defer: 8
+2023-11-25 00:09:29,311 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: poll_exit
+2023-11-25 00:09:29,311 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: defer
+2023-11-25 00:09:29,311 INFO    HandlerThread:28598 [handler.py:handle_request_defer():172] handle defer: 8
+2023-11-25 00:09:29,312 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: defer
+2023-11-25 00:09:29,312 INFO    SenderThread:28598 [sender.py:send_request_defer():609] handle sender defer: 8
+2023-11-25 00:09:29,312 INFO    SenderThread:28598 [job_builder.py:build():298] Attempting to build job artifact
+2023-11-25 00:09:29,313 INFO    SenderThread:28598 [job_builder.py:_get_source_type():428] is repo sourced job
+2023-11-25 00:09:29,313 INFO    SenderThread:28598 [job_builder.py:_get_program_relpath():446] run is notebook based run
+2023-11-25 00:09:29,313 INFO    SenderThread:28598 [sender.py:transition_state():613] send defer: 9
+2023-11-25 00:09:29,313 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: defer
+2023-11-25 00:09:29,313 INFO    HandlerThread:28598 [handler.py:handle_request_defer():172] handle defer: 9
+2023-11-25 00:09:29,313 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: defer
+2023-11-25 00:09:29,313 INFO    SenderThread:28598 [sender.py:send_request_defer():609] handle sender defer: 9
+2023-11-25 00:09:29,313 INFO    SenderThread:28598 [dir_watcher.py:finish():358] shutting down directory watcher
+2023-11-25 00:09:29,475 INFO    Thread-12 :28598 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:09:29,475 INFO    SenderThread:28598 [dir_watcher.py:finish():388] scan: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files
+2023-11-25 00:09:29,475 INFO    SenderThread:28598 [dir_watcher.py:finish():402] scan save: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log output.log
+2023-11-25 00:09:29,476 INFO    SenderThread:28598 [dir_watcher.py:finish():402] scan save: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-metadata.json wandb-metadata.json
+2023-11-25 00:09:29,476 INFO    SenderThread:28598 [dir_watcher.py:finish():402] scan save: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json wandb-summary.json
+2023-11-25 00:09:29,476 INFO    SenderThread:28598 [dir_watcher.py:finish():402] scan save: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/requirements.txt requirements.txt
+2023-11-25 00:09:29,480 INFO    SenderThread:28598 [dir_watcher.py:finish():402] scan save: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/config.yaml config.yaml
+2023-11-25 00:09:29,480 INFO    SenderThread:28598 [sender.py:transition_state():613] send defer: 10
+2023-11-25 00:09:29,482 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: defer
+2023-11-25 00:09:29,482 INFO    HandlerThread:28598 [handler.py:handle_request_defer():172] handle defer: 10
+2023-11-25 00:09:29,484 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: defer
+2023-11-25 00:09:29,485 INFO    SenderThread:28598 [sender.py:send_request_defer():609] handle sender defer: 10
+2023-11-25 00:09:29,485 INFO    SenderThread:28598 [file_pusher.py:finish():175] shutting down file pusher
+2023-11-25 00:09:29,771 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-25 00:09:29,771 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: poll_exit
+2023-11-25 00:09:29,848 INFO    wandb-upload_0:28598 [upload_job.py:push():131] Uploaded file /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/output.log
+2023-11-25 00:09:29,983 INFO    wandb-upload_1:28598 [upload_job.py:push():131] Uploaded file /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/wandb-summary.json
+2023-11-25 00:09:30,149 INFO    wandb-upload_2:28598 [upload_job.py:push():131] Uploaded file /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/requirements.txt
+2023-11-25 00:09:30,362 INFO    wandb-upload_3:28598 [upload_job.py:push():131] Uploaded file /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/files/config.yaml
+2023-11-25 00:09:30,572 INFO    Thread-11 (_thread_body):28598 [sender.py:transition_state():613] send defer: 11
+2023-11-25 00:09:30,573 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: defer
+2023-11-25 00:09:30,573 INFO    HandlerThread:28598 [handler.py:handle_request_defer():172] handle defer: 11
+2023-11-25 00:09:30,574 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: defer
+2023-11-25 00:09:30,574 INFO    SenderThread:28598 [sender.py:send_request_defer():609] handle sender defer: 11
+2023-11-25 00:09:30,574 INFO    SenderThread:28598 [file_pusher.py:join():181] waiting for file pusher
+2023-11-25 00:09:30,574 INFO    SenderThread:28598 [sender.py:transition_state():613] send defer: 12
+2023-11-25 00:09:30,574 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: defer
+2023-11-25 00:09:30,574 INFO    HandlerThread:28598 [handler.py:handle_request_defer():172] handle defer: 12
+2023-11-25 00:09:30,574 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: defer
+2023-11-25 00:09:30,574 INFO    SenderThread:28598 [sender.py:send_request_defer():609] handle sender defer: 12
+2023-11-25 00:09:30,574 INFO    SenderThread:28598 [file_stream.py:finish():595] file stream finish called
+2023-11-25 00:09:30,772 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-25 00:09:31,367 INFO    SenderThread:28598 [file_stream.py:finish():599] file stream finish is done
+2023-11-25 00:09:31,368 INFO    SenderThread:28598 [sender.py:transition_state():613] send defer: 13
+2023-11-25 00:09:31,368 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: poll_exit
+2023-11-25 00:09:31,368 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: defer
+2023-11-25 00:09:31,368 INFO    HandlerThread:28598 [handler.py:handle_request_defer():172] handle defer: 13
+2023-11-25 00:09:31,369 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: defer
+2023-11-25 00:09:31,369 INFO    SenderThread:28598 [sender.py:send_request_defer():609] handle sender defer: 13
+2023-11-25 00:09:31,369 INFO    SenderThread:28598 [sender.py:transition_state():613] send defer: 14
+2023-11-25 00:09:31,369 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: defer
+2023-11-25 00:09:31,369 INFO    HandlerThread:28598 [handler.py:handle_request_defer():172] handle defer: 14
+2023-11-25 00:09:31,370 DEBUG   SenderThread:28598 [sender.py:send():380] send: final
+2023-11-25 00:09:31,370 DEBUG   SenderThread:28598 [sender.py:send():380] send: footer
+2023-11-25 00:09:31,370 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: defer
+2023-11-25 00:09:31,370 INFO    SenderThread:28598 [sender.py:send_request_defer():609] handle sender defer: 14
+2023-11-25 00:09:31,370 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-25 00:09:31,371 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: poll_exit
+2023-11-25 00:09:31,371 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-25 00:09:31,372 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: server_info
+2023-11-25 00:09:31,372 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: server_info
+2023-11-25 00:09:31,417 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: get_summary
+2023-11-25 00:09:31,418 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: sampled_history
+2023-11-25 00:09:31,418 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: job_info
+2023-11-25 00:09:31,516 DEBUG   SenderThread:28598 [sender.py:send_request():407] send_request: job_info
+2023-11-25 00:09:31,517 DEBUG   HandlerThread:28598 [handler.py:handle_request():146] handle_request: shutdown
+2023-11-25 00:09:31,517 INFO    HandlerThread:28598 [handler.py:finish():866] shutting down handler
+2023-11-25 00:09:32,435 INFO    WriterThread:28598 [datastore.py:close():294] close: /home/loewe/tabs/pro-dl/notebooks/fashion-pulse-test/artifacts/wandb/wandb/run-20231125_000827-up7pyr9v/run-up7pyr9v.wandb
+2023-11-25 00:09:32,576 INFO    SenderThread:28598 [sender.py:finish():1536] shutting down sender
+2023-11-25 00:09:32,577 INFO    SenderThread:28598 [file_pusher.py:finish():175] shutting down file pusher
+2023-11-25 00:09:32,577 INFO    SenderThread:28598 [file_pusher.py:join():181] waiting for file pusher
