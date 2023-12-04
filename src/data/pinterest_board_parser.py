@@ -95,7 +95,14 @@ def _get_pin_count(board_url: str) -> int:
 
 
 def parse_pins_from_board(board_url: str, logging_enabled: bool = False) -> List[str]:
-    pin_count = _get_pin_count(board_url)
+    try:
+        pin_count = _get_pin_count(board_url)
+    except Exception as e:
+        if logging_enabled:
+            print(
+                f"Failed to get pin count of board {board_url} due to {e}, aborting")
+        return []
+
     if logging_enabled:
         print(f"Board's pin count: {pin_count}", end='\n\n')
 

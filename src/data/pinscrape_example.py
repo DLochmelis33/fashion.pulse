@@ -1,5 +1,5 @@
 from pinscrape import pinscrape
-details = pinscrape.scraper.scrape("grunge", "output", {}, 10, 200)
+details = pinscrape.scraper.scrape("grunge", "output", {}, 10, 20)
 
 if details["isDownloaded"]:
     print("\nDownloading completed !!")
