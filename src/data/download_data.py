@@ -18,6 +18,16 @@ def filter_unique_images(dir: str, logging_enabled: bool = False) -> None:
                     f'Removed duplicate image: {filename} was a copy of {unique_hashes[img_hash]}')
 
 
+def print_downloaded_data_size(data_dir: str):
+    total = 0
+    for style in os.listdir(data_dir):
+        style_dir = os.path.join(data_dir, style)
+        style_size = len(os.listdir(style_dir))
+        total += style_size
+        print(f'{style}: {style_size} images')
+    print(f'\nTotal: {total}')
+
+
 styles_boards = {
     'formal': {
         'women-800': 'https://www.pinterest.com/couturebenz/elegant-and-formal-outfits/',
@@ -26,7 +36,7 @@ styles_boards = {
         'men-100': 'https://www.pinterest.com/elvis890714/formal-style/',
         'men-200': 'https://www.pinterest.com/bowselectie/mens-formal-wear/',
         'men-90': 'https://in.pinterest.com/nchandu1407/formal-dresses-for-men/'
-        },
+    },
     'classic': {
         'women-340': 'https://www.pinterest.com/vettacapsule/classic-style-inspiration/',
         'women-170-formal-ish': 'https://www.pinterest.com/melovemaj94/office-wear-mood-board/',
@@ -156,14 +166,20 @@ styles_boards = {
 
 data_dir = '../../data/raw'
 
-for style, boards in styles_boards.items():
-    style_dir = os.path.join(data_dir, style)
-    for board_name, board_url in boards.items():
-        download_images_from_board(
-            board_url,
-            output_dir=style_dir,
-            board_name=board_name,
-            num_of_workers=10,
-            logging_enabled=True
-        )
-    filter_unique_images(style_dir, logging_enabled=True)
+# for style, boards in styles_boards.items():
+#     style_dir = os.path.join(data_dir, style)
+#     print(f"Started downloading images for style {style}", end='\n\n')
+#     for board_name, board_url in boards.items():
+#         download_images_from_board(
+#             board_url,
+#             output_dir=style_dir,
+#             board_name=board_name,
+#             num_of_workers=10,
+#             logging_enabled=True
+#         )
+#         print()
+#         print(
+#             f"Successfully downloaded board [{board_name}] {board_url}", end='\n--------\n')
+#     filter_unique_images(style_dir, logging_enabled=True)
+
+print_downloaded_data_size(data_dir)

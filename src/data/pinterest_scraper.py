@@ -48,13 +48,13 @@ def save_images_from_urls(
         url, id = url_id
         try:
             img_path = save_image_from_url(
-                url, output_dir, new_img_name=f'{img_name_prefix}{id}')
+                url, output_dir, new_img_name=f'{img_name_prefix}-{id}')
             imgs_paths.append(img_path)
             if (i + 1) % log_every_nth_step == 0:
                 log_thread_message(f'in progress | saved {i + 1} / {len(urls_with_idx)} images')
         except Exception as e:
             log_thread_message(f'failed to save image {url} due to {e}')
-            
+
     log_thread_message(f'finished | saved {len(urls_with_idx)} images')
 
     return imgs_paths

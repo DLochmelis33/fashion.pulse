@@ -23,7 +23,7 @@ def _parse_pin_count(source: str) -> int:
         raise ValueError(
             "Failed to parse pin count: no pin count element on the given page")
     pin_count_text = pin_count_div.text.strip()
-    pin_count = int(pin_count_text.split()[0])
+    pin_count = int(pin_count_text.split()[0].replace(',', ''))
     return pin_count
 
 
@@ -41,12 +41,6 @@ def _parse_pins_from_html(source: str) -> PinsCollection:
     return pins_src
 
 
-# can be used as a stop criterion for scrolling web pages of large boards
-# def _check_large_board_end_reached(source: str) -> bool:
-#     soup = BeautifulSoup(source, 'html.parser')
-#     return soup.find('h2', text='More like this') is not None
-
-
 T = TypeVar('T')
 R = TypeVar('R')
 
@@ -57,7 +51,8 @@ def _parse_page_while_scrolling(
     results_combiner: Callable[[R, T], R],
     initial: R,
     check_should_stop_scrolling: Callable[[str, R], bool] = None,
-    scroll_pause_time_seconds: float = 1
+    scroll_pause_time_seconds: float = 1,
+    stop_after_n_idle_page_updates: int = 10  # fight boards with incorrect pin count
 ) -> R:
     driver = webdriver.Chrome()
     driver.get(url)
@@ -67,6 +62,7 @@ def _parse_page_while_scrolling(
 
     last_height = None
     results = initial
+    idle_page_updates = 0
     while True:
         driver.execute_script(
             "window.scrollTo(0, document.body.scrollHeight);")
@@ -74,7 +70,17 @@ def _parse_page_while_scrolling(
         page = driver.page_source
 
         page_result = parser(page)
+        old_results_len = len(results)
         results = results_combiner(results, page_result)
+
+        if len(results) == old_results_len:
+            idle_page_updates += 1
+            print(f'[webdriver] consequitive idle page updates: {idle_page_updates} / {stop_after_n_idle_page_updates}')
+            if stop_after_n_idle_page_updates is not None and idle_page_updates >= stop_after_n_idle_page_updates:
+                break
+        else:
+            idle_page_updates = 0
+            print(f'[webdriver] progressing page update')
 
         if check_should_stop_scrolling is not None:
             if check_should_stop_scrolling(page, results):
@@ -118,7 +124,8 @@ def parse_pins_from_board(board_url: str, logging_enabled: bool = False) -> List
         initial={},
         check_should_stop_scrolling=lambda _, results: len(
             results) >= pin_count,
-        scroll_pause_time_seconds=0.5
+        scroll_pause_time_seconds=0.5,
+        stop_after_n_idle_page_updates=10
     )
 
     board_pins = list(pins_ordered_dict.keys())[:pin_count]
