@@ -8,7 +8,7 @@ from models.lightning_model import LightningFashionStylesModel
 from utils.env_utils import read_env_var
 
 from .lightning_model_utils import setup_wandb_logger
-from .lightning_model_utils import BATCH_SIZE
+from .lightning_model_utils import BATCH_SIZE, NUM_CLASSES, LEARNING_RATE
 
 
 def test_on_checkpoint(checkpoint_path: str):
@@ -16,7 +16,10 @@ def test_on_checkpoint(checkpoint_path: str):
     data_module = FashionStylesDataModule(
         data_dir=data_dir, batch_size=BATCH_SIZE)
 
-    lightning_model = LightningFashionStylesModel(FashionStylesModel())
+    lightning_model = LightningFashionStylesModel(
+        FashionStylesModel(num_classes=NUM_CLASSES),
+        learning_rate=LEARNING_RATE
+    )
     wandb_logger = setup_wandb_logger(lightning_model)
     trainer = pl.Trainer(
         accelerator='auto',

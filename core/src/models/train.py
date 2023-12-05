@@ -1,5 +1,5 @@
 import pytorch_lightning as pl
-from pytorch_lightning.callbacks import LambdaCallback
+from pytorch_lightning.callbacks import LambdaCallback, ModelCheckpoint
 
 import wandb
 
@@ -15,7 +15,7 @@ from .lightning_model_utils import BATCH_SIZE, LEARNING_RATE, NUM_EPOCHS, NUM_CL
 def train():
     data_dir = read_env_var('DATA_DIR')
     data_module = FashionStylesDataModule(
-        data_dir=data_dir, batch_size=BATCH_SIZE)
+        data_dir=data_dir, batch_size=BATCH_SIZE, num_workers=2)
 
     model = FashionStylesModel(num_classes=NUM_CLASSES)
     lightning_model = LightningFashionStylesModel(
@@ -31,8 +31,15 @@ def train():
         accelerator='auto',
         devices='auto',
         logger=wandb_logger,
-        log_every_n_steps=100,
-        callbacks=[LambdaCallback(on_fit_start=on_fit_start_callback)]
+        log_every_n_steps=5,
+        callbacks=[
+            LambdaCallback(on_fit_start=on_fit_start_callback),
+            ModelCheckpoint(
+                dirpath=read_env_var('CHECKPOINTS_DIR'),
+                monitor='valid_acc',
+                mode='max'
+            )
+        ]
     )
     trainer.fit(model=lightning_model, datamodule=data_module)
 

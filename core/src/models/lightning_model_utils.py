@@ -3,8 +3,8 @@ from pytorch_lightning.loggers import WandbLogger
 from models.fashion_style_model import FashionStylesModel
 from models.lightning_model import LightningFashionStylesModel
 
-NUM_EPOCHS = 5
-BATCH_SIZE = 256
+NUM_EPOCHS = 1
+BATCH_SIZE = 64
 LEARNING_RATE = 1e-3
 NUM_CLASSES = 20
 
