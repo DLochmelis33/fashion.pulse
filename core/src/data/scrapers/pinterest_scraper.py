@@ -1,5 +1,5 @@
 from typing import List, Tuple
-from pinterest_board_parser import parse_pins_from_board
+from .pinterest_board_parser import parse_pins_from_board
 import numpy as np
 from concurrent.futures import ThreadPoolExecutor
 import threading
@@ -38,7 +38,7 @@ def save_images_from_urls(
     logging_enabled: bool = False,
     log_every_nth_step: int = 5
 ) -> List[str]:
-    
+
     def log_thread_message(msg: str) -> None:
         if logging_enabled:
             print(f'Worker #{threading.get_native_id()}: {msg}')
@@ -51,7 +51,8 @@ def save_images_from_urls(
                 url, output_dir, new_img_name=f'{img_name_prefix}-{id}')
             imgs_paths.append(img_path)
             if (i + 1) % log_every_nth_step == 0:
-                log_thread_message(f'in progress | saved {i + 1} / {len(urls_with_idx)} images')
+                log_thread_message(
+                    f'in progress | saved {i + 1} / {len(urls_with_idx)} images')
         except Exception as e:
             log_thread_message(f'failed to save image {url} due to {e}')
 
