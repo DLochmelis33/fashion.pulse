@@ -7,11 +7,11 @@ from models.fashion_style_model import FashionStylesModel
 from models.lightning_model import LightningFashionStylesModel
 from utils.env_utils import read_env_var
 
-from .lightning_model_utils import setup_wandb_logger
+from .lightning_model_utils import setup_wandb_logger, get_model_checkpoint_callback
 from .lightning_model_utils import BATCH_SIZE, NUM_CLASSES, LEARNING_RATE
 
 
-def test_on_checkpoint(checkpoint_path: str):
+def test_on_checkpoint(checkpoint_path: str, wandb_run_id: str):
     data_dir = read_env_var('DATA_DIR')
     data_module = FashionStylesDataModule(
         data_dir=data_dir, batch_size=BATCH_SIZE)
@@ -20,16 +20,19 @@ def test_on_checkpoint(checkpoint_path: str):
         FashionStylesModel(num_classes=NUM_CLASSES),
         learning_rate=LEARNING_RATE
     )
-    wandb_logger = setup_wandb_logger(lightning_model)
+    wandb_logger = setup_wandb_logger(
+        lightning_model, resume_run_id=wandb_run_id)
     trainer = pl.Trainer(
         accelerator='auto',
         devices='auto',
-        logger=wandb_logger
+        logger=wandb_logger,
+        callbacks=[get_model_checkpoint_callback()]
     )
     trainer.test(model=lightning_model, datamodule=data_module,
                  ckpt_path=checkpoint_path)
 
 
 if __name__ == '__main__':
-    test_on_checkpoint('best')
+    wandb_run_id = None
+    test_on_checkpoint('best', wandb_run_id)
     wandb.finish()
