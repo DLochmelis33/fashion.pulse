@@ -17,7 +17,7 @@ class LightningFashionStylesModel(pl.LightningModule):
             self,
             model: FashionStylesModel,
             learning_rate: float,
-            class_names: List[str]
+            class_names: List[str] = None
     ):
         super().__init__()
 
