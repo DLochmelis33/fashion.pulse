@@ -16,13 +16,11 @@ class LightningFashionStylesModel(pl.LightningModule):
     def __init__(
             self,
             model: FashionStylesModel,
-            learning_rate: float,
-            class_names: List[str] = None
+            learning_rate: float
     ):
         super().__init__()
 
         self.learning_rate = learning_rate
-        self.class_names = class_names
         self.model = model
         self.save_hyperparameters(ignore=['model'])
 

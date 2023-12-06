@@ -1,5 +1,6 @@
 from typing import Dict
 
+import json
 import os
 import torch
 import io
@@ -17,6 +18,13 @@ def load_eval_model(checkpoint_path: str) -> LightningFashionStylesModel:
     lightning_model.cpu()
     lightning_model.eval()
     return lightning_model
+
+
+def load_classes_labels() -> Dict[int, str]:
+    data_dir = read_env_var('DATA_DIR')
+    file_path = os.path.join(data_dir, 'classes_labels.json')
+    with open(file_path, 'r') as file:
+        return json.loads(file.read())
 
 
 predict_transform = transforms.Compose([
@@ -40,8 +48,9 @@ def predict(image_bytes: bytes, lightning_model: LightningFashionStylesModel) ->
     with torch.no_grad():
         y_pred = lightning_model(x)
 
-    styles = lightning_model.class_names
-    return {style: score for style, score in zip(styles, y_pred[0].tolist())}
+    styles = load_classes_labels()
+    scores = y_pred.tolist()
+    return {styles[i]: scores[i] for i in range(len(scores))}
 
 
 if __name__ == '__main__':

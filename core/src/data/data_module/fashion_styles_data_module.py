@@ -1,3 +1,4 @@
+import json
 import os
 import pytorch_lightning as pl
 import torch
@@ -32,7 +33,7 @@ class FashionStylesDataModule(pl.LightningDataModule):
             data_dir, 'img_fashion_styles.7z')
 
         self.num_classes = None
-        self.dataset = None
+        self.dataset: datasets.ImageFolder = None
 
     def _extract_dataset(self):
         if not os.path.exists(self.dataset_archive_path):
@@ -59,6 +60,12 @@ class FashionStylesDataModule(pl.LightningDataModule):
             transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
         ])
 
+    def _save_classes_labels(self):
+        classes_to_labels = {idx: label for label, idx in self.dataset.class_to_idx.items()}
+        file_path = os.path.join(self.data_dir, 'classes_labels.json')
+        with open(file_path, 'w') as file:
+            file.write(json.dumps(classes_to_labels))
+            
     def setup(self, stage=None):
         self.dataset = datasets.ImageFolder(
             root=self.dataset_path,
@@ -67,6 +74,7 @@ class FashionStylesDataModule(pl.LightningDataModule):
                 lambda label: F.one_hot(torch.tensor(label), self.num_classes)
             )
         )
+        self._save_classes_labels()
         self.train, self.valid, self.test = random_split(
             self.dataset, [0.8, 0.1, 0.1], generator=self.generator
         )

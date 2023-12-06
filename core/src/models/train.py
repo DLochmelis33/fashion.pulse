@@ -1,5 +1,4 @@
 import pytorch_lightning as pl
-from pytorch_lightning.callbacks import LambdaCallback
 
 import wandb
 
@@ -23,9 +22,6 @@ def train():
 
     wandb_logger = setup_wandb_logger(lightning_model)
 
-    def on_fit_start_callback(trainer, pl_module):
-        lightning_model.class_names = data_module.dataset.classes
-
     trainer = pl.Trainer(
         max_epochs=NUM_EPOCHS,
         accelerator='auto',
@@ -33,7 +29,6 @@ def train():
         logger=wandb_logger,
         log_every_n_steps=5,
         callbacks=[
-            LambdaCallback(on_fit_start=on_fit_start_callback),
             get_model_checkpoint_callback()
         ]
     )
