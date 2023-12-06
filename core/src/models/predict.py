@@ -47,11 +47,11 @@ def predict(image_bytes: bytes, lightning_model: LightningFashionStylesModel) ->
     x = torch.unsqueeze(predict_transform(image), dim=0)
 
     with torch.no_grad():
-        y_pred = lightning_model(x)
+        logits = lightning_model(x)
 
     styles = load_classes_labels()
-    scores = y_pred[0].tolist()
-    return {styles[i]: scores[i] for i in range(len(scores))}
+    probas = torch.softmax(logits[0]).tolist()
+    return {styles[i]: probas[i] for i in range(len(scores))}
 
 
 if __name__ == '__main__':

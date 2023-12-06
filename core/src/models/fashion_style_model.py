@@ -159,7 +159,6 @@ class FashionStylesModel(pl.LightningModule):
             nn.Linear(2048, 2048),  # (B, 2048)
             nn.ReLU(),
             nn.Linear(2048, self.num_classes),  # (B, num_classes)
-            nn.Sigmoid()
         )
 
     def forward(self, x):

@@ -11,7 +11,7 @@ from .fashion_style_model import FashionStylesModel
 class LightningFashionStylesModel(pl.LightningModule):
 
     def _create_accuracy(self):
-        return torchmetrics.Accuracy(task='multilabel', num_labels=self.model.num_classes)
+        return torchmetrics.Accuracy(task='multiclass', num_labels=self.model.num_classes)
 
     def __init__(
             self,
@@ -34,8 +34,7 @@ class LightningFashionStylesModel(pl.LightningModule):
     def _shared_step(self, batch):
         x, y = batch
         y_pred = self(x)
-        loss = F.binary_cross_entropy(
-            y_pred.to(torch.float), y.to(torch.float))
+        loss = F.cross_entropy(y_pred.to(torch.float), y.to(torch.float))
         return loss, y, y_pred
 
     def training_step(self, batch, batch_idx):
