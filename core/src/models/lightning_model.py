@@ -27,7 +27,7 @@ class LightningFashionStylesModel(pl.LightningModule):
                 num_classes=self.model.num_classes
             )
         }
-        return {name: metrics[name] for name in metric_names}
+        return torch.nn.ModuleDict({name: metrics[name] for name in metric_names})
 
     def __init__(
             self,
@@ -41,7 +41,7 @@ class LightningFashionStylesModel(pl.LightningModule):
         self.save_hyperparameters(ignore=['model'])
 
         self.train_metrics = self._create_metrics(['accuracy', 'f1'])
-        self.valid_metrics = self._create_metrics(['accuracy', 'f1', 'confusion'])
+        self.val_metrics = self._create_metrics(['accuracy', 'f1', 'confusion'])
         self.test_metrics = self._create_metrics(['accuracy', 'f1', 'confusion'])
 
     def forward(self, x):
