@@ -24,7 +24,8 @@ def load_classes_labels() -> Dict[int, str]:
     data_dir = read_env_var('DATA_DIR')
     file_path = os.path.join(data_dir, 'classes_labels.json')
     with open(file_path, 'r') as file:
-        return json.loads(file.read())
+        classes_labels = json.loads(file.read())
+    return {int(idx): label for idx, label in classes_labels.items()}
 
 
 predict_transform = transforms.Compose([
@@ -49,7 +50,7 @@ def predict(image_bytes: bytes, lightning_model: LightningFashionStylesModel) ->
         y_pred = lightning_model(x)
 
     styles = load_classes_labels()
-    scores = y_pred.tolist()
+    scores = y_pred[0].tolist()
     return {styles[i]: scores[i] for i in range(len(scores))}
 
 
