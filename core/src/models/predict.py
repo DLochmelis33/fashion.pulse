@@ -52,7 +52,7 @@ def predict(image_bytes: bytes, lightning_model: LightningFashionStylesModel) ->
         logits = lightning_model(x)
 
     styles = load_classes_labels()
-    probas = torch.softmax(logits, dim=1)[0].tolist()
+    probas = torch.sigmoid(logits)[0].tolist()
     return {styles[i]: probas[i] for i in range(len(probas))}
 
 

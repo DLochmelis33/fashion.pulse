@@ -1,7 +1,6 @@
 import os
 from typing import List
 import torch
-import torch.nn.functional as F
 import pytorch_lightning as pl
 import torchmetrics
 
@@ -45,13 +44,15 @@ class LightningFashionStylesModel(pl.LightningModule):
         self.val_metrics = self._create_metrics(['accuracy', 'f1'])
         self.test_metrics = self._create_metrics(['accuracy', 'f1'])
 
+        self.loss = torch.nn.BCEWithLogitsLoss()
+
     def forward(self, x):
         return self.model(x)
 
     def _shared_step(self, batch):
         x, y = batch
         y_pred = self(x)
-        loss = F.cross_entropy(y_pred.to(torch.float), y.to(torch.float))
+        loss = self.loss(y_pred.to(torch.float), y.to(torch.float))
         return loss, y, y_pred
 
     def _log_train_metrics(self, y_pred, y):
