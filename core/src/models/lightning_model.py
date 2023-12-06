@@ -12,16 +12,17 @@ class LightningFashionStylesModel(pl.LightningModule):
 
     def _create_metrics(self, metric_names: List[str]):
         metrics = {
+            # logging tensors is too tricky
             'accuracy': torchmetrics.Accuracy(
                 task='multiclass', 
                 num_classes=self.model.num_classes,
-                average='none'
+                # average='none' 
             ),
-            'confusion': torchmetrics.ConfusionMatrix(
-                task='multiclass',
-                num_classes=self.model.num_classes,
-                normalize='true'
-            ),
+            # 'confusion': torchmetrics.ConfusionMatrix(
+            #     task='multiclass',
+            #     num_classes=self.model.num_classes,
+            #     normalize='true'
+            # ),
             'f1': torchmetrics.F1Score(
                 task='multiclass',
                 num_classes=self.model.num_classes
@@ -41,8 +42,8 @@ class LightningFashionStylesModel(pl.LightningModule):
         self.save_hyperparameters(ignore=['model'])
 
         self.train_metrics = self._create_metrics(['accuracy', 'f1'])
-        self.val_metrics = self._create_metrics(['accuracy', 'f1', 'confusion'])
-        self.test_metrics = self._create_metrics(['accuracy', 'f1', 'confusion'])
+        self.val_metrics = self._create_metrics(['accuracy', 'f1'])
+        self.test_metrics = self._create_metrics(['accuracy', 'f1'])
 
     def forward(self, x):
         return self.model(x)
