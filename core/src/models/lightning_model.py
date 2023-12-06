@@ -14,8 +14,8 @@ class LightningFashionStylesModel(pl.LightningModule):
         metrics = {
             # logging tensors is too tricky
             'accuracy': torchmetrics.Accuracy(
-                task='multiclass', 
-                num_classes=self.model.num_classes,
+                task='multilabel', 
+                num_labels=self.model.num_classes,
                 # average='none' 
             ),
             # 'confusion': torchmetrics.ConfusionMatrix(
@@ -24,8 +24,8 @@ class LightningFashionStylesModel(pl.LightningModule):
             #     normalize='true'
             # ),
             'f1': torchmetrics.F1Score(
-                task='multiclass',
-                num_classes=self.model.num_classes
+                task='multilabel',
+                num_labels=self.model.num_classes
             )
         }
         return torch.nn.ModuleDict({name: metrics[name] for name in metric_names})

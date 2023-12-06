@@ -39,7 +39,7 @@ def get_checkpoints_dir() -> str:
 
 def get_model_checkpoint_callback() -> ModelCheckpoint:
     return ModelCheckpoint(
-        monitor='valid_acc',
+        monitor='val_accuracy',
         mode='max',
         dirpath=get_checkpoints_dir()
     )
