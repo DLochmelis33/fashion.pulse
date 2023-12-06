@@ -10,8 +10,24 @@ from .fashion_style_model import FashionStylesModel
 
 class LightningFashionStylesModel(pl.LightningModule):
 
-    def _create_accuracy(self):
-        return torchmetrics.Accuracy(task='multiclass', num_labels=self.model.num_classes)
+    def _create_metrics(self, metric_names: List[str]):
+        metrics = {
+            'accuracy': torchmetrics.Accuracy(
+                task='multiclass', 
+                num_classes=self.model.num_classes,
+                average='none'
+            ),
+            'confusion': torchmetrics.ConfusionMatrix(
+                task='multiclass',
+                num_classes=self.model.num_classes,
+                normalize='true'
+            ),
+            'f1': torchmetrics.F1Score(
+                task='multiclass',
+                num_classes=self.model.num_classes
+            )
+        }
+        return {name: metrics[name] for name in metric_names}
 
     def __init__(
             self,
@@ -24,9 +40,9 @@ class LightningFashionStylesModel(pl.LightningModule):
         self.model = model
         self.save_hyperparameters(ignore=['model'])
 
-        self.train_acc = self._create_accuracy()
-        self.valid_acc = self._create_accuracy()
-        self.test_acc = self._create_accuracy()
+        self.train_metrics = self._create_metrics(['accuracy', 'f1'])
+        self.valid_metrics = self._create_metrics(['accuracy', 'f1', 'confusion'])
+        self.test_metrics = self._create_metrics(['accuracy', 'f1', 'confusion'])
 
     def forward(self, x):
         return self.model(x)
@@ -37,24 +53,35 @@ class LightningFashionStylesModel(pl.LightningModule):
         loss = F.cross_entropy(y_pred.to(torch.float), y.to(torch.float))
         return loss, y, y_pred
 
+    def _log_train_metrics(self, y_pred, y):
+        for metric_name, metric in self.train_metrics.items():
+            metric.update(y_pred, y)
+            self.log(f'train_{metric_name}', metric, on_epoch=True, on_step=False)
+            
+    def _log_val_metrics(self, y_pred, y):
+        for metric_name, metric in self.val_metrics.items():
+            metric.update(y_pred, y)
+            self.log(f'val_{metric_name}', metric, on_epoch=True, on_step=False, prog_bar=True)
+            
+    def _log_test_metrics(self, y_pred, y):
+        for metric_name, metric in self.test_metrics.items():
+            metric.update(y_pred, y)
+            self.log(f'test_{metric_name}', metric)
+
     def training_step(self, batch, batch_idx):
         loss, y, y_pred = self._shared_step(batch)
         self.log('train_loss', loss)
-        self.train_acc.update(y_pred, y)
-        self.log('train_acc', self.train_acc, on_epoch=True, on_step=False)
+        self._log_train_metrics(y_pred, y)
         return loss
 
     def validation_step(self, batch, batch_idx):
         loss, y, y_pred = self._shared_step(batch)
-        self.log('valid_loss', loss)
-        self.valid_acc(y_pred, y)
-        self.log('valid_acc', self.valid_acc,
-                 on_epoch=True, on_step=False, prog_bar=True)
+        self.log('val_loss', loss)
+        self._log_val_metrics(y_pred, y)
 
     def test_step(self, batch, batch_idx):
         _, true_labels, y_pred = self._shared_step(batch)
-        self.test_acc(y_pred, true_labels)
-        self.log('test_acc', self.test_acc, on_epoch=True, on_step=False)
+        self._log_test_metrics(y_pred, y)
 
     def configure_optimizers(self):
         optimizer = torch.optim.Adam(self.parameters(), lr=self.learning_rate)

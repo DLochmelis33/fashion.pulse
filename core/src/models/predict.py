@@ -7,6 +7,8 @@ import io
 from PIL import Image
 from torchvision import transforms
 
+import matplotlib.pyplot as plt
+
 from models.lightning_model import LightningFashionStylesModel
 from utils.env_utils import read_env_var
 
@@ -50,16 +52,19 @@ def predict(image_bytes: bytes, lightning_model: LightningFashionStylesModel) ->
         logits = lightning_model(x)
 
     styles = load_classes_labels()
-    probas = torch.softmax(logits[0]).tolist()
-    return {styles[i]: probas[i] for i in range(len(scores))}
+    probas = torch.softmax(logits, dim=1)[0].tolist()
+    return {styles[i]: probas[i] for i in range(len(probas))}
 
 
 if __name__ == '__main__':
     data_dir = read_env_var('DATA_DIR')
     img_path = os.path.join(
-        data_dir, 'img_fashion_styles_extracted', 'gothic', 'women-490-65.jpg')
+        data_dir, 'img_fashion_styles_extracted', 'gothic', 'men-190-12.jpg')
     with open(img_path, 'rb') as f:
         img_bytes = f.read()
 
-    lm = load_eval_model('/content/fashion.pulse/core/artifacts/checkpoints/epoch=0-step=285.ckpt')
+    artifacts_dir = read_env_var('ARTIFACTS_DIR')
+    model_path = os.path.join(artifacts_dir, 'multilabel.ckpt')
+    lm = load_eval_model(model_path)
+    # lm = load_eval_model('/content/fashion.pulse/core/artifacts/checkpoints/epoch=0-step=285.ckpt')
     print(predict(img_bytes, lm))
