@@ -33,13 +33,15 @@ def setup_wandb_logger(lightning_model: LightningFashionStylesModel, resume_run_
     return wandb_logger
 
 
+def get_checkpoints_dir() -> str:
+    return os.path.join(read_env_var('ARTIFACTS_DIR'), 'checkpoints')
+
+
 def get_model_checkpoint_callback() -> ModelCheckpoint:
-    checkpoints_dir = os.path.join(
-        read_env_var('ARTIFACTS_DIR'), 'checkpoints')
     return ModelCheckpoint(
         monitor='valid_acc',
         mode='max',
-        dirpath=checkpoints_dir
+        dirpath=get_checkpoints_dir()
     )
 
 

@@ -25,7 +25,7 @@ predict_transform = transforms.Compose([
             max(image.height, image.width),
             pad_if_needed=True,
             padding_mode='symmetric'
-        )
+        )(image)
     ),
     transforms.Resize([192, 192]),
     transforms.ToTensor(),
@@ -35,13 +35,13 @@ predict_transform = transforms.Compose([
 
 def predict(image_bytes: bytes, lightning_model: LightningFashionStylesModel) -> Dict[str, float]:
     image = Image.open(io.BytesIO(image_bytes))
-    x = predict_transform(image)
+    x = torch.unsqueeze(predict_transform(image), dim=0)
 
     with torch.no_grad():
         y_pred = lightning_model(x)
 
     styles = lightning_model.class_names
-    return {style: score for style, score in zip(styles, y_pred.tolist())}
+    return {style: score for style, score in zip(styles, y_pred[0].tolist())}
 
 
 if __name__ == '__main__':
@@ -51,5 +51,5 @@ if __name__ == '__main__':
     with open(img_path, 'rb') as f:
         img_bytes = f.read()
 
-    lm = load_eval_model('best')
+    lm = load_eval_model('/content/fashion.pulse/core/artifacts/checkpoints/epoch=0-step=285.ckpt')
     print(predict(img_bytes, lm))
