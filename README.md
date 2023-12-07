@@ -49,7 +49,7 @@ Repo is organised in the following way:
 
 ### Train the fanciest model
 
-**TL;DR**: you can skip reading and just jump to [the Jupyter notebook](core/notebooks/FashionPulse.ipynb) to check an example of the complete model training pipeline! But the more detailed guide is presented below.
+**TL;DR**: you can skip reading and just jump to [the Jupyter notebook](core/notebooks/FashionPulsePipeline.ipynb) to check an example of the complete model training pipeline! But the more detailed guide is presented below.
 
 Training model is pretty straightforward, luckily we made it simple! First, go to the `core/src` directory, all the following commands should be executed from there.
 ```bash
