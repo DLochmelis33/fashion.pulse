@@ -67,5 +67,4 @@ if __name__ == '__main__':
     artifacts_dir = read_env_var('ARTIFACTS_DIR')
     model_path = os.path.join(artifacts_dir, ckpt_path)
     lm = load_eval_model(model_path)
-    # lm = load_eval_model('/content/fashion.pulse/core/artifacts/checkpoints/epoch=0-step=285.ckpt')
     print(predict(img_bytes, lm))

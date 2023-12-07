@@ -88,10 +88,6 @@ _styles_boards = {
         'men-120': 'https://www.pinterest.com/bowlingconcepts/retro-mens-fashion/',
         'men-60': 'https://www.pinterest.com/TrendyButler/vintage-inspired-fall-fashion/'
     },
-    # 'edgy': {
-    #     'women-240': 'https://www.pinterest.com/vettacapsule/edgy-style-inspiration/',
-    #     'women-140': 'https://www.pinterest.com/arieltabitha/edgy-feminine-outfits/',
-    # },
     'rock-n-roll': {
         'women-340': 'https://www.pinterest.com/theraggshop/rock-n-roll/',
         'women-450': 'https://www.pinterest.com/soumisou/rock-and-roll-fashion/',
