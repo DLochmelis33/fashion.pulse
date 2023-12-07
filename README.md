@@ -1,4 +1,4 @@
-<img src="readme-atrifacts/fashion_pulse_logo_small.png" align="right" />
+<img src="readme-atrifacts/fashion_pulse_logo_mini_small.png" align="right" />
 
 # fashion.pulse
 <!-- Badges -->
