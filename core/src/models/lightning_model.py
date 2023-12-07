@@ -3,25 +3,21 @@ from typing import List
 import torch
 import pytorch_lightning as pl
 import torchmetrics
+import matplotlib.pyplot as plt
+import wandb
 
 from .fashion_style_model import FashionStylesModel
+from utils.artifacts_utils import load_classes_labels
 
 
 class LightningFashionStylesModel(pl.LightningModule):
 
     def _create_metrics(self, metric_names: List[str]):
         metrics = {
-            # logging tensors is too tricky
             'accuracy': torchmetrics.Accuracy(
                 task='multilabel', 
                 num_labels=self.model.num_classes,
-                # average='none' 
             ),
-            # 'confusion': torchmetrics.ConfusionMatrix(
-            #     task='multiclass',
-            #     num_classes=self.model.num_classes,
-            #     normalize='true'
-            # ),
             'f1': torchmetrics.F1Score(
                 task='multilabel',
                 num_labels=self.model.num_classes
@@ -43,6 +39,11 @@ class LightningFashionStylesModel(pl.LightningModule):
         self.train_metrics = self._create_metrics(['accuracy', 'f1'])
         self.val_metrics = self._create_metrics(['accuracy', 'f1'])
         self.test_metrics = self._create_metrics(['accuracy', 'f1'])
+        self.test_confusion = torchmetrics.ConfusionMatrix(
+            task='multilabel',
+            num_labels=self.model.num_classes,
+            normalize='true'
+        )
 
         self.loss = torch.nn.BCEWithLogitsLoss()
 
@@ -84,6 +85,27 @@ class LightningFashionStylesModel(pl.LightningModule):
     def test_step(self, batch, batch_idx):
         _, y, y_pred = self._shared_step(batch)
         self._log_test_metrics(y_pred, y)
+        self.test_confusion.update(y_pred, y)
+
+    def on_test_epoch_end(self):
+        conf = self.test_confusion.compute()
+        labels = load_classes_labels()
+
+        true_negatives = [[labels[i], conf[i][0][0]] for i in range(len(conf))]
+        tn_table = wandb.Table(data=true_negatives, columns=['style', 'TN'])
+        self.logger.experiment.log({
+            'test_true_negatives': wandb.plot.bar(
+                tn_table, 'style', 'TN'
+            )
+        })
+
+        true_positives = [[labels[i], conf[i][1][1]] for i in range(len(conf))]
+        tp_table = wandb.Table(data=true_positives, columns=['style', 'TP'])
+        self.logger.experiment.log({
+            'test_true_positives': wandb.plot.bar(
+                tp_table, 'style', 'TP'
+            )
+        })
 
     def configure_optimizers(self):
         optimizer = torch.optim.Adam(self.parameters(), lr=self.learning_rate)

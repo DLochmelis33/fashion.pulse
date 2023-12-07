@@ -41,6 +41,6 @@ def test_on_best_checkpoint(wandb_run_id: str):
 
 if __name__ == '__main__':
     # note: don't forget to update with the relevant ones
-    wandb_run_id = 'sg3yeobh' # read_env_var('WANDB_RUN_ID')
+    wandb_run_id = read_env_var('WANDB_RUN_ID')
     test_on_best_checkpoint(wandb_run_id)
     wandb.finish()
