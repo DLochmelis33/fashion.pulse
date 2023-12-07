@@ -16,11 +16,11 @@ class LightningFashionStylesModel(pl.LightningModule):
         metrics = {
             'accuracy': torchmetrics.Accuracy(
                 task='multilabel', 
-                num_labels=self.model.num_classes,
+                num_labels=self.model.num_classes
             ),
             'f1': torchmetrics.F1Score(
                 task='multilabel',
-                num_labels=self.model.num_classes
+                num_classes=self.model.num_classes
             )
         }
         return torch.nn.ModuleDict({name: metrics[name] for name in metric_names})
@@ -46,6 +46,8 @@ class LightningFashionStylesModel(pl.LightningModule):
         )
 
         self.loss = torch.nn.BCEWithLogitsLoss()
+
+        self.loss = torch.nn.CrossEntropyLoss()
 
     def forward(self, x):
         return self.model(x)
