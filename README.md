@@ -1,9 +1,9 @@
-<img src="readme-atrifacts/fashion_pulse_logo_mini.png" align="right" />
+<img src="readme-atrifacts/fashion_pulse_logo_small.png" align="right" />
 
 # fashion.pulse
 <!-- Badges -->
 [![releases](https://img.shields.io/github/v/release/DLochmelis33/fashion.pulse.svg)](https://github.com/DLochmelis33/fashion.pulse/releases)
-[![License Badge][license-badge]][license]
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![contributions](https://img.shields.io/github/contributors/DLochmelis33/fashion.pulse)](https://github.com/DLochmelis33/fashion.pulse/graphs/contributors)
 
 ## Stylish Introduction
