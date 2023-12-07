@@ -169,7 +169,7 @@ fun FashionResultItem(style: String, score: Double) {
             modifier = Modifier.fillMaxWidth()
         ) {
             Text(
-                text = style,
+                text = style.replace("_", " / "),
                 textAlign = TextAlign.Left,
                 modifier = Modifier
                     .weight(1f)
