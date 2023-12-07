@@ -8,11 +8,10 @@ from utils.env_utils import read_env_var
 from models.fashion_style_model import FashionStylesModel
 from models.lightning_model import LightningFashionStylesModel
 
-NUM_EPOCHS = 100
 BATCH_SIZE = 64
 LEARNING_RATE = 1e-3
 NUM_CLASSES = 20
-NUM_WORKERS = 2 # note: set to 0 when running locally
+
 
 # IMPORTANT NOTE: login to wandb before training the model
 # > !wandb login

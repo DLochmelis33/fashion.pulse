@@ -1,5 +1,6 @@
 import pytorch_lightning as pl
 
+import argparse
 import wandb
 import os
 
@@ -23,8 +24,7 @@ def test_on_best_checkpoint(wandb_run_id: str):
     )
 
     wandb_logger = setup_wandb_logger(lightning_model, resume_run_id=wandb_run_id)
-    # wandb.restore(f'model', f'dlhf/fashion.pulse-core_src/{wandb_run_id}')
-    # model_ckpt_path = os.path.join(get_wandb_dir(), 'model.ckpt')
+
     run_artifact = wandb.run.use_artifact('dlhf/fashion.pulse-core_src/model-sg3yeobh:best')
     run_artifact_path = run_artifact.download(root=get_wandb_dir())
     ckpt_path = os.path.join(run_artifact_path, 'model.ckpt')
@@ -40,7 +40,9 @@ def test_on_best_checkpoint(wandb_run_id: str):
 
 
 if __name__ == '__main__':
-    # note: don't forget to update with the relevant ones
-    wandb_run_id = read_env_var('WANDB_RUN_ID')
-    test_on_best_checkpoint(wandb_run_id)
+    parser = argparse.ArgumentParser(description='predict labels for an image')
+    parser.add_argument('-r', dest='run_id', type=str, required=True, help='wandb run id to test')
+    args = parser.parse_args()
+
+    test_on_best_checkpoint(args.run_id)
     wandb.finish()

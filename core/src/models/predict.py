@@ -52,7 +52,7 @@ def predict(image_bytes: bytes, lightning_model: LightningFashionStylesModel) ->
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='predict labels for an image')
-    parser.add_argument('-i',dest='image_path', type=str, required=True, help='image to analyze, relative to $DATA_DIR')
+    parser.add_argument('-i', dest='image_path', type=str, required=True, help='image to analyze, relative to $DATA_DIR')
     parser.add_argument('-c', dest='ckpt_path', type=str, required=True, help='checkpoint of model to use, relative to $ARTIFACTS_DIR')
     args = parser.parse_args()
 
