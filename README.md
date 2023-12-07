@@ -6,11 +6,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![contributions](https://img.shields.io/github/contributors/DLochmelis33/fashion.pulse)](https://github.com/DLochmelis33/fashion.pulse/graphs/contributors)
 
-## Stylish Introduction
+## Stylish Introduction ✨✨✨
 
 The project provides a service that **_evaluates how fashionable an outfit on the image is_**. The fashion score is given for 20 different styles.
 
-![Alt Text](readme-atrifacts/fashion_pulse_demo_small.gif)
+![Alt Text](readme-atrifacts/fashion_pulse_demo_mini.gif)
 
 To try the app by yourself check the [Releases](https://github.com/DLochmelis33/fashion.pulse/releases) section!
 
@@ -23,15 +23,15 @@ To try the app by yourself check the [Releases](https://github.com/DLochmelis33/
 
 ### Table of contents
 - [fashion.pulse](#fashionpulse)
-  - [Stylish Introduction](#stylish-introduction)
+  - [Stylish Introduction ✨✨✨](#stylish-introduction-)
     - [This repo includes](#this-repo-includes)
     - [Table of contents](#table-of-contents)
-  - [Detailed repo structure](#detailed-repo-structure)
-  - [Train model \& deploy server](#train-model--deploy-server)
-  - [Infrastructure methods overview](#infrastructure-methods-overview)
+  - [Detailed repo structure 🔍](#detailed-repo-structure-)
+  - [Train model \& deploy server 🚂](#train-model--deploy-server-)
+  - [Infrastructure methods overview ⚙️](#infrastructure-methods-overview-️)
 
-## Detailed repo structure
+## Detailed repo structure 🔍
 
-## Train model & deploy server
+## Train model & deploy server 🚂
 
-## Infrastructure methods overview
+## Infrastructure methods overview ⚙️
