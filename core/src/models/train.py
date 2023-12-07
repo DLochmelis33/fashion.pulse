@@ -38,8 +38,8 @@ def train(num_epochs: int, num_workers: int):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='predict labels for an image')
-    parser.add_argument('-n', dest='num_epochs', type=int, required=True, help='number of epochs')
-    parser.add_argument('-w', dest='num_workers', type=int, default=2, help='number of workers')
+    parser.add_argument('-n', '--num_epochs', dest='num_epochs', type=int, required=True, help='number of epochs')
+    parser.add_argument('-w', '--num_workers', dest='num_workers', type=int, default=0, help='number of workers')
     args = parser.parse_args()
     
     train(num_epochs=args.num_epochs, num_workers=args.num_workers)

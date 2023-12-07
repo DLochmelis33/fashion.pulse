@@ -41,7 +41,7 @@ def test_on_best_checkpoint(wandb_run_id: str):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='predict labels for an image')
-    parser.add_argument('-r', dest='run_id', type=str, required=True, help='wandb run id to test')
+    parser.add_argument('-r', '--run_id', dest='run_id', type=str, required=True, help='wandb run id to test')
     args = parser.parse_args()
 
     test_on_best_checkpoint(args.run_id)
