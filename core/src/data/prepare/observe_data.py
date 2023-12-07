@@ -22,5 +22,5 @@ def print_downloaded_data_size(data_dir: str):
 
 if __name__ == '__main__':
     root_data = read_env_var('DATA_DIR')
-    data_dir = os.path.join(root_data, 'img_fashion_styles')
+    data_dir = os.path.join(root_data, 'img_fashion_styles_extracted')
     print_downloaded_data_size(data_dir)

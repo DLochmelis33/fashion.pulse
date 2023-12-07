@@ -8,13 +8,13 @@ from models.lightning_model import LightningFashionStylesModel
 from utils.env_utils import read_env_var
 
 from .lightning_model_utils import setup_wandb_logger, get_model_checkpoint_callback
-from .lightning_model_utils import BATCH_SIZE, LEARNING_RATE, NUM_EPOCHS, NUM_CLASSES
+from .lightning_model_utils import BATCH_SIZE, LEARNING_RATE, NUM_EPOCHS, NUM_CLASSES, NUM_WORKERS
 
 
 def train():
     data_dir = read_env_var('DATA_DIR')
     data_module = FashionStylesDataModule(
-        data_dir=data_dir, batch_size=BATCH_SIZE, num_workers=2)
+        data_dir=data_dir, batch_size=BATCH_SIZE, num_workers=NUM_WORKERS)
 
     model = FashionStylesModel(num_classes=NUM_CLASSES)
     lightning_model = LightningFashionStylesModel(

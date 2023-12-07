@@ -2,3 +2,5 @@ notebooks/*/artifacts/
 core/data/*
 !core/data/img_fashion_styles.7z
 __pycache__
+*.ckpt
+core/artifacts/wandb/

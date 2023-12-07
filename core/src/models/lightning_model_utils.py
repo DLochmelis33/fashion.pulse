@@ -12,19 +12,27 @@ NUM_EPOCHS = 100
 BATCH_SIZE = 64
 LEARNING_RATE = 1e-3
 NUM_CLASSES = 20
+NUM_WORKERS = 2 # note: set to 0 when running locally
 
 # IMPORTANT NOTE: login to wandb before training the model
 # > !wandb login
 
 
+def get_checkpoints_dir() -> str:
+    return os.path.join(read_env_var('ARTIFACTS_DIR'), 'checkpoints')
+
+    
+def get_wandb_dir() -> str:
+    return os.path.join(read_env_var('ARTIFACTS_DIR'), 'wandb')
+
+
 def setup_wandb_logger(lightning_model: LightningFashionStylesModel, resume_run_id: str = None) -> WandbLogger:
-    artifacts_dir = read_env_var('ARTIFACTS_DIR')
-    wandb_dir = os.path.join(artifacts_dir, 'wandb')
+    wandb_dir = get_wandb_dir()
     os.makedirs(wandb_dir, exist_ok=True)
     if resume_run_id is None:
         wandb.init(dir=wandb_dir)
     else:
-        wandb.init(dir=wandb_dir, id=resume_run_id, resume='must')
+        wandb.init(dir=wandb_dir, id=resume_run_id, project='fashion.pulse-core_src', resume='must')
 
     wandb_logger = WandbLogger(project='fashion-pulse', log_model='all')
     wandb_logger.experiment.config['batch_size'] = BATCH_SIZE
@@ -33,13 +41,9 @@ def setup_wandb_logger(lightning_model: LightningFashionStylesModel, resume_run_
     return wandb_logger
 
 
-def get_checkpoints_dir() -> str:
-    return os.path.join(read_env_var('ARTIFACTS_DIR'), 'checkpoints')
-
-
 def get_model_checkpoint_callback() -> ModelCheckpoint:
     return ModelCheckpoint(
-        monitor='val_accuracy',
+        monitor='val_f1',
         mode='max',
         dirpath=get_checkpoints_dir()
     )

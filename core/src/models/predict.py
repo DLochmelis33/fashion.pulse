@@ -13,6 +13,7 @@ from models.lightning_model import LightningFashionStylesModel
 from utils.env_utils import read_env_var
 
 from .lightning_model_utils import load_from_checkpoint
+from utils.artifacts_utils import load_classes_labels
 
 
 def load_eval_model(checkpoint_path: str) -> LightningFashionStylesModel:
@@ -20,14 +21,6 @@ def load_eval_model(checkpoint_path: str) -> LightningFashionStylesModel:
     lightning_model.cpu()
     lightning_model.eval()
     return lightning_model
-
-
-def load_classes_labels() -> Dict[int, str]:
-    data_dir = read_env_var('DATA_DIR')
-    file_path = os.path.join(data_dir, 'classes_labels.json')
-    with open(file_path, 'r') as file:
-        classes_labels = json.loads(file.read())
-    return {int(idx): label for idx, label in classes_labels.items()}
 
 
 predict_transform = transforms.Compose([
@@ -52,7 +45,7 @@ def predict(image_bytes: bytes, lightning_model: LightningFashionStylesModel) ->
         logits = lightning_model(x)
 
     styles = load_classes_labels()
-    probas = torch.softmax(logits, dim=1)[0].tolist()
+    probas = torch.sigmoid(logits)[0].tolist()
     return {styles[i]: probas[i] for i in range(len(probas))}
 
 
