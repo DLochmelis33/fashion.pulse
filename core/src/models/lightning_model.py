@@ -82,7 +82,7 @@ class LightningFashionStylesModel(pl.LightningModule):
         self._log_val_metrics(y_pred, y)
 
     def test_step(self, batch, batch_idx):
-        _, true_labels, y_pred = self._shared_step(batch)
+        _, y, y_pred = self._shared_step(batch)
         self._log_test_metrics(y_pred, y)
 
     def configure_optimizers(self):

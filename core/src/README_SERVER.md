@@ -12,7 +12,7 @@ Build a server image:
 docker build -t fashionpulse .
 ```
 
-Run the image locally to ensure it's working:
+Run the image locally to ensure it's working (note that to access the local server you should use `127.0.0.1:8000`):
 
 ```bash
 docker run -p 8000:8000 fashionpulse
