@@ -20,7 +20,7 @@ class LightningFashionStylesModel(pl.LightningModule):
             ),
             'f1': torchmetrics.F1Score(
                 task='multilabel',
-                num_classes=self.model.num_classes
+                num_labels=self.model.num_classes
             )
         }
         return torch.nn.ModuleDict({name: metrics[name] for name in metric_names})

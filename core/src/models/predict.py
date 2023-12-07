@@ -1,5 +1,6 @@
 from typing import Dict
 
+import argparse
 import json
 import os
 import torch
@@ -50,14 +51,21 @@ def predict(image_bytes: bytes, lightning_model: LightningFashionStylesModel) ->
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='predict labels for an image')
+    parser.add_argument('-i',dest='image_path', type=str, required=True, help='image to analyze, relative to $DATA_DIR')
+    parser.add_argument('-c', dest='ckpt_path', type=str, required=True, help='checkpoint of model to use, relative to $ARTIFACTS_DIR')
+    args = parser.parse_args()
+
+    image_path = args.image_path
+    ckpt_path = args.ckpt_path
+
     data_dir = read_env_var('DATA_DIR')
-    img_path = os.path.join(
-        data_dir, 'img_fashion_styles_extracted', 'gothic', 'men-190-12.jpg')
+    img_path = os.path.join(data_dir, image_path)
     with open(img_path, 'rb') as f:
         img_bytes = f.read()
 
     artifacts_dir = read_env_var('ARTIFACTS_DIR')
-    model_path = os.path.join(artifacts_dir, 'multilabel.ckpt')
+    model_path = os.path.join(artifacts_dir, ckpt_path)
     lm = load_eval_model(model_path)
     # lm = load_eval_model('/content/fashion.pulse/core/artifacts/checkpoints/epoch=0-step=285.ckpt')
     print(predict(img_bytes, lm))
