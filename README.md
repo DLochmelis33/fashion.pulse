@@ -75,12 +75,12 @@ _Wandb_ will output the genereated run id (for example, `sg3yeobh`) &mdash; don'
 
 Once the training is finished, the time has come to test the model!
 ```bash
-python -m models.test -r sg3yeobh
+python -m models.test --run_id sg3yeobh
 ```
 
 Finally, to use the trained model you can run `predict` module or call its functions directly from the Python code.
 ```bash
-python -m models.predict -i gothic/women-490-65.jpg -c checkpoints/model.ckpt
+python -m models.predict --image_path img_fashion_styles_extracted/gothic/women-490-65.jpg --ckpt_path checkpoints/model.ckpt
 ``` 
 
 ### Deploy the most reliable server
